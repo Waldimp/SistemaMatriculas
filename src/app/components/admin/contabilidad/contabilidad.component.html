@@ -1,0 +1,39 @@
+<section class="row mt-5">
+    <div class="col">
+
+        
+        <table class="table -hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Sueldo Actual</th>
+                    <th scope="col">Puesto</th>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">&nbsp;</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Worker of Workers; index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{Worker.nombre}}</td>
+                    <td>{{Worker.apellido}}</td>
+                    <td>${{Worker.sueldo}}</td>
+                    <td>{{Worker.puesto}}</td>
+                    <td>
+                        <a href="/planilla/{{Worker.id}}" class="btn btn-info">Ver Planillas</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" (click)="onPreUpdateWorker(Worker)" data-toggle="modal" data-target="#modalWorkerPlanillasMeses">Generar</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<app-modal></app-modal>
+

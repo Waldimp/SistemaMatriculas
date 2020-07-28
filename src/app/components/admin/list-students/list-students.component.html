@@ -1,0 +1,64 @@
+<header>
+    <h1 class="logo">LOGO CDB</h1>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="#">Cerrar Sesion</a></li>
+      </ul>
+    </nav>
+  </header>
+<div class="container-xl">
+<div class="table-responsive">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6"><h2>Proceso de matricula</h2></div>
+                <div class="col-sm-6">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info Pagado">
+                            <input type="radio" name="status" value="all" checked="checked"> Todos
+                        </label>
+                        <label class="btn btn-success">
+                            <input type="radio" name="status" value="Pagado"> Pagado
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="status" value="Pendiente"> Pendiente
+                        </label>							
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Codigo</th>
+                    <th>Grado</th>
+                    <th>Sección</th>
+                    <th>Estado</th>
+                    <th></th>
+                    <th>Action</th>
+                    <th></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Worker of Workers; index as i" data-status="Pagado">
+                    <td>{{i + 1}}</td>
+                    <td>{{Worker.nombre}}</td>
+                    <td>{{Worker.apellido}}</td>
+                    <td>{{Worker.codigo}}</td>
+                    <td>{{Worker.grado}}</td>
+                    <td>{{Worker.especialidad}}</td>
+                    <td><span class="label label-success">Pagado</span></td>
+                    <td><a href="/student/{{Worker.id}}" class="btn btn-sm manage">Ver</a></td>
+                    <td><a href="#" class="btn btn-sm manage">Actualizar</a></td>
+                    <td><a (click)="onDeleteWorker(Worker.id)" class="btn btn-sm manage">Eliminar</a></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div> 
+</div>   
+</div> 

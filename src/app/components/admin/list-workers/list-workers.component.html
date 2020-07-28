@@ -1,0 +1,49 @@
+<section class="row mt-5">
+    <div class="col">
+
+        <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalWorker">Nuevo Trabajador</button>
+        
+        <table class="table -hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Grado</th>
+                    <th scope="col">Especialidad</th>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Worker of Workers; index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{Worker.nombre}}</td>
+                    <td>{{Worker.apellido}}</td>
+                    <td>{{Worker.codigo}}</td>
+                    <td>{{Worker.grado}}</td>
+                    <td>{{Worker.especialidad}}</td>
+
+                    <td>
+                        <a href="/student/{{Worker.id}}" class="btn btn-info">Ver Boleta</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" (click)="onPreUpdateWorker(Worker)" data-toggle="modal" data-target="#modalWorker">Actualizar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="onDeleteWorker(Worker.id)">Eliminar</button>
+                    </td>
+                    
+
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    
+</section>
+
+<app-modal></app-modal>

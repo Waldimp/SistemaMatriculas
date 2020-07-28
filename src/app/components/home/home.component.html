@@ -1,0 +1,31 @@
+<section id="books" class="mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let Worker of Workers">
+          <div class="card_book">
+            <div class="card">
+              <div class="card-body text-center">
+                <p>
+                  <img class="img-fluid" src="../../../assets/user.jpg" alt="{{Worker.nombre}}">
+                </p>
+                <h4 routerLink="/book/{{Worker.id}}" class="card-title">{{Worker.nombre}} {{Worker.apellido}}</h4>
+                <p class="card-text">
+                  {{Worker.descripcion }}
+                </p>
+                <div class="container-precio-idioma">
+                  <p class="badge badge-info">
+                    ${{Worker.sueldo}}
+                  </p>
+                  <p class="badge badge-info">
+                    {{Worker.puesto}}
+                  </p>
+                </div>
+                <a href="/book/{{Worker.id}}" class="btn btn-block btn-primary" target="_blank">Ver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

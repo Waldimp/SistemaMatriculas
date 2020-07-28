@@ -1,0 +1,75 @@
+<!--
+
+<section id="login" class="mb-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+          <div class="card_login">
+            <div class="card">
+              <div class="card-body text-center">
+                <form #formLogin="ngForm" (submit)="onLogin()">
+                  <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Inicia Sesión</h1>
+                  <div class="alert alert-danger" role="alert" *ngIf="isError">
+                    Something is wrong!
+                  </div>
+                  <div class="form-group">
+                    <input [(ngModel)]="email" type="email" id="email" name="email" class="form-control" placeholder="Correo" required>
+                  </div>
+                  <div class="form-group">
+                    <input [(ngModel)]="password" type="password" id="password" name="password" class="form-control" placeholder="Contraseña" 
+                      required>
+                  </div>
+                  <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar Sesión</button>
+                  <div class="form-group">
+                    <a routerLink="/user/register" class="form-control login-user">¿Eres nuevo?</a>
+                  </div>
+                  
+                  <a href="" (click)="onLogout()">Salir</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+  
+<div class="body">
+	<div id="int-form">
+		<form #formLogin="ngForm" (submit)="onLogin()">
+			<div class="login">
+				<h1 class="head-title">Ingreso a matricula</h1>
+				<div class="uid">
+					<label class="blanco">Codigo / Correo </label>
+					<input [(ngModel)]="email" type="email" id="email" name="email">
+				</div>
+				<div class="pwd">
+					<label class="blanco">Password</label>
+					<input [(ngModel)]="password" type="password" id="password" name="password">
+				</div>
+				<button type="submit">Empezar matricula</button>
+			</div>
+
+		</form>
+
+		<form #formLogin="ngForm" (submit)="onLoginAdmin()">	
+
+			
+			<div class="register">
+				<span class="clopen">ADMON</span>
+				<h1 class="head-title"  >Acceso Administrativo</h1>
+				<div class="uid">
+					<label class="negro">Numero de usuario</label>
+					<input [(ngModel)]="email" type="email" id="email" name="email">
+				</div>
+				<div class="pwd">
+					<label class="negro">Password</label>
+					<input [(ngModel)]="password" type="password" id="password" name="password">
+				</div>
+				<button type="submit">Ingresar</button>
+				
+			</div>	
+		</form>
+	</div>
+  </div>

@@ -1,0 +1,538 @@
+
+<header>
+    <h1>Colegio Salesiano Don Bosco <br> <span> Inscripcion al año lectivo 2020</span></h1>
+    <br>
+    <p>Por favor rellenar los campos con los datos que se le solicitan.</p>
+  </header>
+  
+  <form>
+
+    <!--General -->
+    <div class="form-group">
+      <h2 class="heading">Informacion conforme partida de nacimiento</h2>
+
+      <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+      
+      <div class="controls">
+        <input type="text" id="apellido" class="floatLabel" name="apellido" value="{{Student.apellido}}" disabled>
+        <label for="apellido" class="active">Apellidos</label>
+      </div>
+      
+  
+      <div class="controls">
+        <input type="text" id="nombre" class="floatLabel" name="nombre" value="{{Student.nombre}}" disabled>
+        <label for="nombre" class="active">Nombres</label>
+      </div>
+  
+      <div class="controls">
+        <i class="fa fa-sort"></i>
+        <select class="floatLabel" name="grado" value="{{Student.grado}}" disabled>
+          <option value=""></option>
+          <option value="Primero">Primer Año</option>
+          <option value="Segundo">Segundo Año</option>
+          <option value="Tercero">Tercer Año</option>
+        </select>
+        <label for="Grado" class="active">Grado</label>
+      </div>
+  
+      <div class="controls">
+        <i class="fa fa-sort"></i>
+        <select class="floatLabel" name="especialidad" value="{{Student.especialidad}}" disabled>
+          <option value=""></option>
+          <option value="Info">Sistemas Informaticos</option>
+          <option value="Eca">Electronica</option>
+          <option value="Meca">Mantenimiento Automotriz</option>
+          <option value="Diseño">Diseño Grafico</option>
+          <option value="Emca">Electromecanica</option>
+          <option value="Salud">Salud</option>
+          <option value="General">General</option>
+        </select>
+        <label for="Especialidad" class="active">Especialidad</label>
+      </div>
+  
+      <div class="controls">
+        <i class="fa fa-sort"></i>
+        <select class="floatLabel" name="seccion" value="{{Student.seccion}}" disabled>
+          <option value=""></option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+        </select>
+        <label for="Seccion" class="active">Seccion</label>
+      </div>
+      <div class="controls">
+        <input type="number" id="codigo" class="floatLabel" name="codigo" value="{{Student.codigo}}" disabled>
+        <label for="codigo" class="active">Codigo</label>
+      </div>
+
+    
+  
+    <div class="controls">
+      <input type="text" id="Departamento" class="floatLabel" name="departamento" value="{{Student.departamento}}" disabled>
+      <label for="departamento" class="active">Departamento de nacimiento</label>
+    </div>
+  
+  <div class="controls">
+    <input type="text" id="Municipio" class="floatLabel" name="municipio" value="{{Student.municipio}}" disabled>
+    <label for="municipio" class="active">Municipio de nacimiento</label>
+  </div>
+  <div class="controls">
+    <input type="text" id="Nacionalidad" class="floatLabel" name="nacionalidad" value="{{Student.nacionalidad}}" disabled>
+    <label for="Nacionalidad" class="active">Nacionalidad</label>
+  </div>
+  <div class="controls">
+    <input type="number" id="Dia" class="floatLabel" name="dia" value="{{Student.dia}}" disabled>
+    <label for="Dia" class="active">Dia de nacimiento</label>
+  </div>
+  
+  <div class="controls">
+    <i class="fa fa-sort"></i>
+    <select class="floatLabel" name="mes" value="{{Student.mes}}" disabled>
+      <option value=""></option>
+      <option value="Enero">Enero</option>
+      <option value="Febrero">Febrero</option>
+      <option value="Marzo">Marzo</option>
+      <option value="Abril">Abril</option>
+      <option value="Mayo">Mayo</option>
+      <option value="Junio">Junio</option>
+      <option value="Julio">Julio</option>
+      <option value="Agosto">Agosto</option>
+      <option value="Septiembre">Septiembre</option>
+      <option value="Octubre">Octubre</option>
+      <option value="Noviembre">Noviembre</option>
+      <option value="Diciembre">Diciembre</option>
+    </select>
+    <label for="Mes" class="active">Mes</label>
+  </div>
+  
+  <div class="controls">
+    <input type="number" id="año" class="floatLabel" name="anio" value="{{Student.anio}}" disabled>
+    <label for="año" class="active">Año</label>
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="direccion" class="floatLabel" name="direccion" value="{{Student.direccion}}" disabled>
+    <label for="direccion" class="active">Direccion</label>
+  </div>
+  
+  <div class="controls">
+    <input type="number" id="telefono" class="floatLabel" name="telefono" value="{{Student.telefono}}" disabled>
+    <label for="telefono" class="active">Telefono</label>
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="transporte" class="floatLabel" name="transporte" value="{{Student.transporte}}" disabled>
+    <label for="transporte" class="active">Tipo de transporte que utiliza</label>
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="parvularia" class="floatLabel" name="parvularia" value="{{Student.parvularia}}" disabled>
+    <label for="parvularia" class="active">Centro educativo donde estudio PARVULARIA</label>
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="1ciclo" class="floatLabel" name="primerCiclo" value="{{Student.primerCiclo}}" disabled>
+    <label for="1ciclo" class="active">Centro educativo donde estudio I CICLO</label>
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="2ciclo" class="floatLabel" name="segundoCiclo" value="{{Student.segundoCiclo}}" disabled>
+    <label for="2ciclo" class="active">Centro educativo donde estudio II CICLO</label>
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="3ciclo" class="floatLabel" name="tercerCiclo" value="{{Student.tercerCiclo}}" disabled>
+    <label for="3ciclo" class="active">Centro educativo donde estudio III CICLO</label>
+  </div>
+  
+  </div>
+  
+  
+    <!--    
+  
+      INFORMACION ADICIONAL  -->
+    <div class="form-group">
+      <h2 class="heading">Informacion Adicional</h2>
+      
+      <div class="controls2">
+        <h1>Tiene hermanos matriculados en:</h1>
+        <br>
+      <input id='colegio' type="radio" name='turno' id="colegio" disabled value="colegio"  />
+      <label for="colegio" class="active">Colegio</label>
+
+       <input id='centro' type="radio" name='turno' id="centro" disabled value="centro"/>
+      <label for="centro" class="active">Centro Escolar</label>
+    </div>
+    
+   
+    <div class="controls">
+      <input type="text" id="hermano1" class="floatLabel" name="hermano1" value="{{Student.hermano1}}" disabled>
+      <label for="hermano1" class="active">Nombre</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="gradoh1" class="floatLabel" name="gradoh1" value="{{Student.gradoh1}}" disabled>
+      <label for="gradoh1" class="active">Grado</label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="codh1" class="floatLabel" name="codh1" value="{{Student.codh1}}" disabled>
+      <label for="codh1" class="active">Codigo</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="hermano2" class="floatLabel" name="hermano2" value="{{Student.hermano2}}" disabled>
+      <label for="hermano2" class="active">Nombre</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="gradoh2" class="floatLabel" name="gradoh2" value="{{Student.gradoh2}}" disabled>
+      <label for="gradoh2" class="active">Grado</label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="codh2" class="floatLabel" name="codh2" value="{{Student.codh2}}" disabled>
+      <label for="codh2" class="active">Codigo</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="religion" class="floatLabel"  name="religion" value="{{Student.religion}}" disabled>
+      <label for="religion" class="active">¿Que religion profesa?</label>
+    </div>
+    <!--
+    <div class="controls2">
+      <h1>¿Si es catolica que sacramento ha recibido?</h1>
+    <input id='Bautismo' type="checkbox" name='Bautismo'  />
+    <label for="Bautismo">Bautismo</label>
+  
+    <input id='Comunion' type="checkbox" name='Comunion'  />
+    <label for="Comunion">Comunion</label>
+  
+    <input id='Confirmacion' type="checkbox" name='Confirmacion'  />
+    <label for="Confirmacion">Confirmacion</label>
+    
+     <input id='Ninguno' type="checkbox" name='Ninguno' />
+    <label for="Ninguno">Ninguno</label>
+    </div>
+    -->
+    <div class="controls2">
+      <h1>¿El estudiante es alergico a algun medicamento?</h1>
+      <br>
+      <br>
+    <input id='AlergiaV' name="alergia" type="radio" id="AlergiaV" value="AlergiaV"  disabled/>
+    <label for="AlergiaV" class="active">Si</label>
+  
+    <input id='AlergiF' name="alergia" type="radio" id="AlergiaF" value="AlergiaF"  disabled/>
+    <label for="AlergiF" class="active">No</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="alergiRespuesta" class="floatLabel" name="alergiRespuesta" value="{{Student.alergiRespuesta}}" disabled>
+      <label for="AlergiRespuesta" class="active">Si su respuesta es afirmativa, indicar a que es alergico: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="impedimiento" class="floatLabel" name="impedimiento" value="{{Student.impedimiento}}" disabled>
+      <label for="Impedimiento" class="active">Tiene el estudiante algun impedimento fisico o enfermedad cronica, favor especificar: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="fiebre" class="floatLabel" name="fiebre" value="{{Student.fiebre}}" disabled>
+      <label for="Fiebre" class="active">En caso de fiebre administrar: </label> 
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="dolordeestomago" class="floatLabel" name="dolordeestomago" value="{{Student.dolordeestomago}}" disabled>
+      <label for="Dolordeestomago" class="active">En caso de dolor de estomago administrar: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="dolordecabeza" class="floatLabel" name="dolordecabeza" [(ngModel)]="this.dataApi.selectedWorker.dolordecabeza">
+      <label for="Dolordecabeza" class="active">En caso de dolor de cabeza administrar: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="medicamentopermanente" class="floatLabel" name="medicamentopermanente" [(ngModel)]="this.dataApi.selectedWorker.medicamentopermanente">
+      <label for="Medicamentopermanente" class="active">Medicamento prescrito de caracter permanente: </label>
+    </div>
+    
+    <div class="controls">
+      <input type="text" id="grupo" class="floatLabel" name="grupo" value="{{Student.grupo}}" disabled>
+      <label for="grupo" class="active">Pertenece a un grupo juvenil, grupo religioso, etc: </label>
+    </div>
+  
+    <!--
+    <div class="controls2">
+      <h1>Soy aficionado a: </h1>
+    <input id='Canto' type="checkbox" name='Canto'  />
+    <label for="Canto">Canto</label>
+  
+    <input id='Dibujo' type="checkbox" name='Dibujo'  />
+    <label for="Dibujo">Dibujo</label>
+  
+    <input id='Artes' type="checkbox" name='Artes'  />
+    <label for="Artes">Artes plasticas</label>
+    
+     <input id='Declamacion' type="checkbox" name='Declamacion' />
+    <label for="Declamacion">Declamacion</label>
+    
+  
+    <input id='Danza' type="checkbox" name='Danza' />
+    <label for="Danza">Danza</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="otro" class="floatLabel" name="otro" [(ngModel)]="this.dataApi.selectedWorker.otro">
+      <label for="otro">Otros: </label>
+    </div>
+  -->
+    <div class="controls">
+      <input type="text" id="conocimiento" class="floatLabel" name="conocimiento" value="{{Student.conocimiento}}" disabled>
+      <label for="conocimiento" class="active">¿Conocimientos especiales que posee?(artes marciales, guardavida, informatica, primeros auxilios, idiomas,etc.) </label>
+    </div>
+  
+    </div>
+  
+  <!-- 
+     SITUACION FAMILIAR -->
+    <div class="form-group">
+      <h2 class="heading">Situacion familiar del/la estudiante</h2>
+      
+      <div class="controls">
+        <input type="number" id="miembros" class="floatLabel" name="miembros" value="{{Student.miembros}}" disabled>
+        <label for="miembros" class="active">Numeros de miembros que conforman su familia:</label>
+      </div>
+      
+      <!--
+      <div class="controls2">
+        <h1>Actualmente vivo con: </h1>
+      <input id='papa' type="checkbox" name='papa'  />
+      <label for="papa">Papa</label>
+    
+      <input id='Mama' type="checkbox" name='Mama'  />
+      <label for="Mama">Mama</label>
+    
+      <input id='Abuelos' type="checkbox" name='Abuelos'  />
+      <label for="Abuelos">Abuelos</label>
+      
+       <input id='Tios' type="checkbox" name='Tios' />
+      <label for="Tios">Tios</label>
+      
+      <input id='Hermanos' type="checkbox" name='Hermanos' />
+      <label for="Hermanos">Hermanos</label>
+  
+      <input id='Padrinos' type="checkbox" name='Padrinos' />
+      <label for="Padrinos">Padrinos</label>
+  
+      <input id='Amigos' type="checkbox" name='Amigos' />
+      <label for="Amigos">Amigos</label>
+      </div>
+  
+      <div class="controls">
+        <input type="text" id="otrof" class="floatLabel" name="otrof">
+        <label for="otrof">Otros especifique:</label>
+      </div>
+  -->
+    </div>
+  
+  
+ <!--  DATOS FAMILIARES-->
+  <div class="form-group">
+    <h2 class="heading">Datos Familiares</h2>
+  
+    <div class="controls">
+      <input type="text" id="papa" class="floatLabel" name="papa" value="{{Student.papa}}" disabled>
+      <label for="papa" class="active">Nombre del padre:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="papad" class="floatLabel" name="papad" value="{{Student.papad}}" disabled>
+      <label for="papad" class="active">Direccion:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="papatel" class="floatLabel" name="papatel" value="{{Student.papatel}}" disabled>
+      <label for="papatel" class="active">Tel. casa:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="papacel" class="floatLabel" name="papacel" value="{{Student.papacel}}" disabled>
+      <label for="papa-cel" class="active">Celular:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="papaprofesion" class="floatLabel" name="papaprofesion" value="{{Student.papaprofesion}}" disabled>
+      <label for="papaprofesion" class="active">Profesion u oficio:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="papalugardt" class="floatLabel" name="papalugardt" value="{{Student.papalugardt}}" disabled>
+      <label for="papalugardt" class="active">Lugar de trabajo: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="papateltrabajo" class="floatLabel" name="papateltrabajo" value="{{Student.papateltrabajo}}" disabled>
+      <label for="papateltrabajo" class="active">Tel.trabajo:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="papareligion" class="floatLabel" name="papareligion" value="{{Student.papareligion}}" disabled>
+      <label for="papareligion" class="active">Religion:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="papagrupo" class="floatLabel" name="papagrupo" value="{{Student.papagrupo}}" disabled>
+      <label for="papagrupo" class="active">Grupo o asociacion religiosa a la que pertenece:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="papaiglesia" class="floatLabel" name="papaiglesia" value="{{Student.papaiglesia}}" disabled>
+      <label for="papaiglesia" class="active">Iglesia:</label>
+    </div>
+  
+  <!--  
+    <div class="controls2">
+      <h1>Estado familiar: </h1>
+    <input id='casadoiglesia' type="checkbox" name='casadoiglesia'  />
+    <label for="casadoiglesia">Casado por la iglesia</label>
+  
+    <input id='casadocivil' type="checkbox" name='casadocivil'  />
+    <label for="casadocivil">Casado solo por lo civil</label>
+  
+    <input id='Divorciado' type="checkbox" name='Divorciado'  />
+    <label for="Divorciado">Divorciado</label>
+  
+    <input id='Separado' type="checkbox" name='Separado' />
+    <label for="Separado">Separado</label>
+    
+     <input id='Fallecido' type="checkbox" name='Fallecido' />
+    <label for="Fallecido">Fallecido</label>
+  
+    </div>
+  -->
+    
+    <div class="controls">
+      <input type="text" id="mama" class="floatLabel" name="mama" value="{{Student.mama}}" disabled>
+      <label for="mama" class="active">Nombre de la madre:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="mama" class="floatLabel" name="mamad" value="{{Student.mamad}}" disabled>
+      <label for="mamad" class="active">Direccion:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="mamatel" class="floatLabel" name="mamatel" value="{{Student.mamatel}}" disabled>
+      <label for="mamatel" class="active">Tel. casa:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="mamacel" class="floatLabel" name="mamacel" value="{{Student.mamacel}}" disabled>
+      <label for="mamacel" class="active">Celular:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="mamaprofesion" class="floatLabel" name="mamaprofesion" value="{{Student.mamaprofesion}}" disabled>
+      <label for="mamaprofesion" class="active">Profesion u oficio:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="mamalugardt" class="floatLabel" name="mamalugardt" value="{{Student.mamalugardt}}" disabled>
+      <label for="mamalugardt" class="active">Lugar de trabajo: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="mamateltrabajo" class="floatLabel" name="mamateltrabajo" value="{{Student.mamateltrabajo}}" disabled>
+      <label for="mamateltrabajo" class="active">Tel.trabajo:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="mamareligion" class="floatLabel" name="mamareligion" value="{{Student.mamareligion}}" disabled>
+      <label for="mamareligion" class="active">Religion:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="papagrupo" class="floatLabel" name="mamagrupo" value="{{Student.mamagrupo}}" disabled>
+      <label for="mamagrupo" class="active">Grupo o asociacion religiosa a la que pertenece:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="mamaaiglesia" class="floatLabel" name="mamaiglesia" value="{{Student.mamaiglesia}}" disabled>
+      <label for="mamaiglesia" class="active">Iglesia:</label>
+    </div>
+  
+  <!--
+    <div class="controls2">
+      <h1>Estado familiar: </h1>
+    <input id='casadaiglesia' type="checkbox" name='casadaiglesia'  />
+    <label for="casadaiglesia">Casada por la iglesia</label>
+  
+    <input id='casadacivil' type="checkbox" name='casadacivil'  />
+    <label for="casadacivil">Casada solo por lo civil</label>
+  
+    <input id='Divorciada' type="checkbox" name='Divorciada'  />
+    <label for="Divorciada">Divorciada</label>
+  
+    <input id='Separada' type="checkbox" name='Separada' />
+    <label for="Separada">Separada</label>
+    
+     <input id='Fallecida' type="checkbox" name='Fallecida' />
+    <label for="Fallecida">Fallecida</label>
+  
+    </div>
+  
+  -->
+    <div class="controls">
+      <input type="text" id="encargado" class="floatLabel" name="encargado" value="{{Student.encargado}}" disabled>
+      <label for="encargado" class="active">Nombre del encargado:(Llenar unicamente si el/la estudiante esta a cargo de persona distinta a padre o madre.)</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="parentesco" class="floatLabel" name="parentesco" value="{{Student.parentesco}}" disabled>
+      <label for="parentesco" class="active">Parentesco: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="encargadotel" class="floatLabel" name="encargadotel" value="{{Student.encargadotel}}" disabled>
+      <label for="encargadotel" class="active">Tel. Casa: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="encargadocel" class="floatLabel" name="encargadocel" value="{{Student.encargadocel}}" disabled>
+      <label for="encargadocel" class="active">Celular: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="encargadodirc" class="floatLabel" name="encargadodirc" value="{{Student.encargadodirc}}" disabled>
+      <label for="encargadodirc" class="active">Direccion:</label>
+    </div>
+  
+    <div class="controls">
+      <input type="text" id="encargadoprofesion" class="floatLabel" name="encargadoprofesion" value="{{Student.encargadoprofesion}}" disabled>
+      <label for="encargadoprofesion" class="active">Profesion u oficio:</label>
+    </div>
+  
+    <div class="controls"> 
+      <input type="text" id="encargadolugardt" class="floatLabel" name="encargadolugardt" value="{{Student.encargadolugardt}}" disabled>
+      <label for="encargadolugardt" class="active">Lugar de trabajo: </label>
+    </div>
+  
+    <div class="controls">
+      <input type="number" id="encargadoteltrabajo" class="floatLabel" name="encargadoteltrabajo" value="{{Student.encargadoteltrabajo}}" disabled>
+      <label for="encargadoteltrabajo" class="active">Tel.trabajo:</label>
+    </div>
+    
+  </div>
+    <!--  FIN -->
+    <div class="form-group">
+      <div class="controls">
+        <button>Imprimir Datos</button>
+      </div>
+    </div>
+    
+  </form>
+  <!-- partial -->

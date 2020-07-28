@@ -1,0 +1,747 @@
+<!--Modal para crear y actualizar trabajadores-->
+
+<div class="modal fade" id="modalWorker" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ !this.dataApi.selectedWorker.id ? 'Nuevo Trabajador' : 'Actualizar Trabajador'}}
+        </h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #formWorker="ngForm" (ngSubmit)="onSaveWorker(formWorker)">
+
+            <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Nombre">Nombre</label>
+                  <input type="text" name="nombre" class="form-control" 
+                  [(ngModel)]="this.dataApi.selectedWorker.nombre">
+                </div>
+  
+                <div class="form-group col-md-6">
+                  <label for="Apellido">Apellido</label>
+                  <input type="text" name="apellido" class="form-control"
+                  [(ngModel)]="this.dataApi.selectedWorker.apellido">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Codigo">Codigo</label>
+                  <input type="text" name="codigo" class="form-control" 
+                  [(ngModel)]="this.dataApi.selectedWorker.codigo">
+                </div>
+  
+                <div class="form-group col-md-3">
+                  <label for="Telefono">Telefono</label>
+                  <input type="text" name="telefono" class="form-control"
+                  [(ngModel)]="this.dataApi.selectedWorker.telefono">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="AFP">AFP</label>
+                    <input type="text" name="afp" class="form-control"
+                    [(ngModel)]="this.dataApi.selectedWorker.afp">
+                  </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="DUI">DUI</label>
+                  <input type="text" name="dui" class="form-control" 
+                  [(ngModel)]="this.dataApi.selectedWorker.dui">
+                </div>
+  
+                <div class="form-group col-md-6">
+                  <label for="NUP">NUP</label>
+                  <input type="text" name="nup" class="form-control"
+                  [(ngModel)]="this.dataApi.selectedWorker.nup">
+                </div>
+            </div>
+
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Puesto">Puesto</label>
+                <input type="text" name="puesto" class="form-control"
+                [(ngModel)]="this.dataApi.selectedWorker.puesto">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="Sueldo">Sueldo</label>
+                <input type="text" name="sueldo" class="form-control" placeholder="$0.00"
+                [(ngModel)]="this.dataApi.selectedWorker.sueldo">
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="descripcion" class="col-form-label">Descripción:</label>
+            <textarea class="form-control" name="descripcion" [(ngModel)]="this.dataApi.selectedWorker.descripcion"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar Trabajador</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--Modal para los bonos de los trabajadores-->
+
+<div class="modal fade" id="modalWorkerBonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Agregar Bonos
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerBonus="ngForm" (ngSubmit)="onSaveWorker(formWorkerBonus)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+              <input type="hidden" name="nombre" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.nombre">
+  
+              <input type="hidden" name="apellido" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.apellido">
+              
+              <input type="hidden" name="codigo" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.codigo">
+
+              <input type="hidden" name="telefono" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.telefono">
+
+              <input type="hidden" name="afp" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.afp">
+
+              <input type="hidden" name="dui" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.dui">
+
+              <input type="hidden" name="nup" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.nup">
+
+              <input type="hidden" name="puesto" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.puesto">
+
+              <input type="hidden" name="sueldo" class="form-control" placeholder="$0.00" [(ngModel)]="this.dataApi.selectedWorker.sueldo">
+
+              <input type="hidden" name="descripcion" class="form-control" [(ngModel)]="this.dataApi.selectedWorker.descripcion">
+
+              
+              <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="Bonificaciones">Bonificaciones</label>
+                    <input type="text" name="bonificaciones" class="form-control" 
+                    [(ngModel)]="this.dataApi.selectedWorker.bonificaciones">
+                  </div>
+    
+                  <div class="form-group col-md-4">
+                    <label for="Tarde">Llegadas tarde:</label>
+                    <input type="text" name="tarde" class="form-control"
+                    [(ngModel)]="this.dataApi.selectedWorker.tarde">
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="Ausencia">Dias ausentes:</label>
+                      <input type="text" name="ausencia" class="form-control"
+                      [(ngModel)]="this.dataApi.selectedWorker.ausencia">
+                    </div>
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Bonos y Descuentos</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!--Modal para generar planillas de distintos meses de los trabajadores-->
+
+<div class="modal fade" id="modalWorkerPlanillasMeses" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Crear Planillas
+        </h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-row">
+
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.enero" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasEnero">Enero</button>
+            </div>
+
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.febrero" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasFebrero">Febrero</button>
+            </div>
+    
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.marzo" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasMarzo">Marzo</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.abril" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasAbril">Abril</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.mayo" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasMayo">Mayo</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.junio" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasJunio">Junio</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.julio" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasJulio">Julio</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.agosto" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasAgosto">Agosto</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.septiembre" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasSeptiembre">Septiembre</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.octubre" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasOctubre">Octubre</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.noviembre" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasNoviembre">Noviembre</button>
+            </div>
+            <div class="form-group col-md-4">
+                <button type="button" *ngIf="!this.dataApi.selectedWorker.diciembre" class="btn btn-secondary" data-toggle="modal" data-target="#modalWorkerPlanillasDiciembre">Diciembre</button>
+            </div>
+
+
+        </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--MODALES para generar planillas de CADA meses de los trabajadores-->
+<!--ENERO-->
+
+<div class="modal fade" id="modalWorkerPlanillasEnero" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Crear Planillas para Enero
+        </h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #formWorkerEnero="ngForm" (ngSubmit)="onSaveWorker(formWorkerEnero)">
+
+            <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Mes:">Sueldo de ese mes:</label>
+                  <input type="text" name="enero" class="form-control" [(ngModel)]="enero">
+
+                </div>
+
+                
+            </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--FEBRERO-->
+
+<div class="modal fade" id="modalWorkerPlanillasFebrero" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Crear Planillas para Febrero
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerFebrero="ngForm" (ngSubmit)="onSaveWorker(formWorkerFebrero)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Mes:">Sueldo de ese mes:</label>
+                    <input type="text" name="febrero" class="form-control" [(ngModel)]="febrero">
+  
+                  </div>
+  
+                  
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!--MARZO-->
+
+<div class="modal fade" id="modalWorkerPlanillasMarzo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Crear Planillas para Marzo
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerMarzo="ngForm" (ngSubmit)="onSaveWorker(formWorkerMarzo)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Mes:">Sueldo de ese mes:</label>
+                    <input type="text" name="marzo" class="form-control" [(ngModel)]="marzo">
+  
+                  </div>
+  
+                  
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+<!--ABRIL-->
+  
+<div class="modal fade" id="modalWorkerPlanillasAbril" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Crear Planillas para Abril
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerAbril="ngForm" (ngSubmit)="onSaveWorker(formWorkerAbril)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Mes:">Sueldo de ese mes:</label>
+                    <input type="text" name="abril" class="form-control" [(ngModel)]="abril">
+  
+                  </div>
+  
+                  
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+</div>
+
+<!--MAYO-->
+
+<div class="modal fade" id="modalWorkerPlanillasMayo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Crear Planillas para Mayo
+        </h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #formWorkerMayo="ngForm" (ngSubmit)="onSaveWorker(formWorkerMayo)">
+
+            <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Mes:">Sueldo de ese mes:</label>
+                  <input type="text" name="mayo" class="form-control" [(ngModel)]="mayo">
+
+                </div>
+
+                
+            </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--JUNIO-->
+
+<div class="modal fade" id="modalWorkerPlanillasJunio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Crear Planillas para Junio
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerJunio="ngForm" (ngSubmit)="onSaveWorker(formWorkerJunio)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Mes:">Sueldo de ese mes:</label>
+                    <input type="text" name="junio" class="form-control" [(ngModel)]="junio">
+  
+                  </div>
+  
+                  
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!--JULIO-->
+
+<div class="modal fade" id="modalWorkerPlanillasJulio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Crear Planillas para Julio
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerJulio="ngForm" (ngSubmit)="onSaveWorker(formWorkerJulio)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Mes:">Sueldo de ese mes:</label>
+                    <input type="text" name="julio" class="form-control" [(ngModel)]="julio">
+  
+                  </div>
+  
+                  
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!--AGOSTO-->
+  
+<div class="modal fade" id="modalWorkerPlanillasAgosto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Crear Planillas para Agosto
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerAgosto="ngForm" (ngSubmit)="onSaveWorker(formWorkerAgosto)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Mes:">Sueldo de ese mes:</label>
+                    <input type="text" name="agosto" class="form-control" [(ngModel)]="agosto">
+  
+                  </div>
+  
+                  
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+</div>
+
+<!--SEPTIEMBRE-->
+
+<div class="modal fade" id="modalWorkerPlanillasSeptiembre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">
+        Crear Planillas para Septiembre
+      </h5>
+
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <form #formWorkerSeptiembre="ngForm" (ngSubmit)="onSaveWorker(formWorkerSeptiembre)">
+
+          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Mes:">Sueldo de ese mes:</label>
+                <input type="text" name="septiembre" class="form-control" [(ngModel)]="septiembre">
+
+              </div>
+
+              
+          </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+        </div>
+
+      </form>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<!--OCTUBRE-->
+
+<div class="modal fade" id="modalWorkerPlanillasOctubre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Crear Planillas para Octubre
+        </h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #formWorkerOctubre="ngForm" (ngSubmit)="onSaveWorker(formWorkerOctubre)">
+
+            <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Mes:">Sueldo de ese mes:</label>
+                  <input type="text" name="octubre" class="form-control" [(ngModel)]="octubre">
+
+                </div>
+
+                
+            </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--NOVIEMBRE-->
+
+<div class="modal fade" id="modalWorkerPlanillasNoviembre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Crear Planillas para Noviembre
+        </h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #formWorkerNoviembre="ngForm" (ngSubmit)="onSaveWorker(formWorkerNoviembre)">
+
+            <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Mes:">Sueldo de ese mes:</label>
+                  <input type="text" name="noviembre" class="form-control" [(ngModel)]="noviembre">
+
+                </div>
+
+                
+            </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--DICIEMBRE-->
+
+<div class="modal fade" id="modalWorkerPlanillasDiciembre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Crear Planillas para Diciembre
+          </h5>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <form #formWorkerDiciembre="ngForm" (ngSubmit)="onSaveWorker(formWorkerDiciembre)">
+  
+              <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Mes:">Sueldo de ese mes:</label>
+                    <input type="text" name="diciembre" class="form-control" [(ngModel)]="diciembre">
+  
+                  </div>
+  
+                  
+              </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Planilla</button>
+            </div>
+  
+          </form>
+        </div>
+        
+      </div>
+    </div>
+</div>

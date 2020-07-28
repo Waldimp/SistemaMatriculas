@@ -1,0 +1,71 @@
+<section id="book" class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 mx-auto">
+                <div class="card_books">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="Mes">Selecciona el mes:</label>
+                                    <select class="form-control" name="mes" [(ngModel)]="mesxd">
+                                        <option *ngIf="Worker.enero" value="{{Worker.enero}}">enero</option>
+                                        <option *ngIf="Worker.febrero" value="{{Worker.febrero}}">febrero</option>
+                                        <option *ngIf="Worker.marzo" value="{{Worker.marzo}}">marzo</option>
+                                        <option *ngIf="Worker.abril" value="{{Worker.abril}}">abril</option>
+                                        <option *ngIf="Worker.mayo" value="{{Worker.mayo}}">mayo</option>
+                                        <option *ngIf="Worker.junio" value="{{Worker.junio}}">junio</option>
+                                        <option *ngIf="Worker.julio" value="{{Worker.julio}}">julio</option>
+                                        <option *ngIf="Worker.agosto" value="{{Worker.agosto}}">agosto</option>
+                                        <option *ngIf="Worker.septiembre" value="{{Worker.septiembre}}">septiembre</option>
+                                        <option *ngIf="Worker.octubre" value="{{Worker.octubre}}">octubre</option>
+                                        <option *ngIf="Worker.noviembre" value="{{Worker.noviembre}}">noviembre</option>
+                                        <option *ngIf="Worker.diciembre" value="{{Worker.diciembre}}">diciembre</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            
+                            
+                            <p><img src="../../../assets/user.jpg" class="img-fluid" alt=""></p>
+                            <h4 class="card-title">{{Worker.nombre}} {{Worker.apellido}}</h4>
+
+                            <p class="card-text">
+                                {{Worker.descripcion}} <br><br>
+
+                                Su DUI es {{ Worker.dui }} <br>
+                                Su codigo es {{ Worker.codigo }} <br>
+                                Su NUP es {{ Worker.nup }} <br>
+                                Su tipoAFP es {{ Worker.afp }} <br>
+                                Su telefono es {{ Worker.telefono }} <br>
+
+                                
+                            </p>
+                            <p class="card-text" *ngIf="mesxd">
+
+                                    El sueldo base es de ${{mesxd}} <br><br>                                    
+
+                                    El descuento de AFP es de 7.25% <br>
+                                    El descuento de ISSS es de 3% <br>
+                                    El descuento de RENTA es de {{ calcularRenta(mesxd) }} <br> <br>
+                                    
+
+                                    El sueldo final es de ${{ calcularSueldoMes(mesxd) }} <br>
+                            </p>
+                            <div class="container-precio-idioma">
+                                <p class="badge badge-info">
+                                  ${{mesxd}}
+                                </p>
+                                <p class="badge badge-info">
+                                  {{Worker.puesto}}
+                                  
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

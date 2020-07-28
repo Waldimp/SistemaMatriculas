@@ -1,0 +1,55 @@
+<section id="book" class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 mx-auto">
+                <div class="card_books">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p><img src="../../../assets/user.jpg" class="img-fluid" alt=""></p>
+                            <h4 class="card-title">{{Worker.nombre}} {{Worker.apellido}}</h4>
+                            <p class="card-text">
+                                {{Worker.descripcion}} <br><br>
+
+                                Su DUI es {{ Worker.dui }} <br>
+                                Su codigo es {{ Worker.codigo }} <br>
+                                Su NUP es {{ Worker.nup }} <br>
+                                Su tipoAFP es {{ Worker.afp }} <br>
+                                Su telefono es {{ Worker.telefono }} <br>
+
+                                
+
+                                
+                            </p>
+                            <p class="card-text">
+                                    El sueldo base es de ${{Worker.sueldo}} <br><br>
+
+                                    BONOS: Su bonificacion es de ${{Worker.bonificaciones}} <br>
+                                    MULTA: Por acumulación de llegadas tardías {{Worker.tarde}} dias <br>
+                                    AUSENCIA: Por acumulación de ausencias {{Worker.ausencia}} dias <br><br>
+
+                                    
+
+                                    El descuento de AFP es de 7.25% <br>
+                                    El descuento de ISSS es de 3% <br>
+                                    El descuento de RENTA es de {{ calcularRenta(Worker.sueldo) }} <br> <br>
+                                    
+
+                                    El sueldo final es de ${{ calcularSueldo(Worker.sueldo, Worker.bonificaciones, Worker.tarde, Worker.ausencia) }} <br>
+                            </p>
+                            <div class="container-precio-idioma">
+                                <p class="badge badge-info">
+                                  ${{Worker.sueldo}}
+                                </p>
+                                <p class="badge badge-info">
+                                  {{Worker.puesto}}
+                                  
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
