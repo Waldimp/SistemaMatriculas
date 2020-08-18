@@ -163,10 +163,10 @@
         <br>
       
       <input id='colegio' type="radio" name='turno' id="colegio"  value="colegio"  [(ngModel)]="this.dataApi.selectedWorker.turno"/>
-      <label for="colegio">Colegio</label>
+      <label for="colegio" id="lblRadio">Colegio</label>
 
        <input id='centro' type="radio" name='turno' id="centro" value="centro"  [(ngModel)]="this.dataApi.selectedWorker.turno"/>
-      <label for="centro">Centro Escolar</label>
+      <label for="centro" id="lblRadio2">Centro Escolar</label>
     </div>
     
    
@@ -225,10 +225,10 @@
       <br>
       <br>
     <input id='AlergiaV' name="alergia" type="radio" id="AlergiaV" value="AlergiaV"  [(ngModel)]="this.dataApi.selectedWorker.alergia"/>
-    <label for="AlergiaV">Si</label>
+    <label for="AlergiaV" id="lblAlergia1">Si</label>
   
     <input id='AlergiF' name="alergia" type="radio" id="AlergiaF" value="AlergiaF"  [(ngModel)]="this.dataApi.selectedWorker.alergia"/>
-    <label for="AlergiF">No</label>
+    <label for="AlergiF" id="lblAlergia2">No</label>
     </div>
   
     <div class="controls">
