@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginRedirect(): void{
-    this.router.navigate(['users/formulario']);
+    this.router.navigate(['users/list-gradosBach']);
   }
 
   onLoginAdmin() : void{
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginRedirectAdmin(): void{
-    this.router.navigate(['admin/list-students']);
+    this.router.navigate(['admin/dashboard']);
   }
 
 }

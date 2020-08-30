@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {CargarScriptsService} from '../../../cargar-scripts.service';
 import {DataApiService} from '../../../services/data-api.service';
 import { WorkersInterface } from '../../../models/workers'; 
@@ -6,13 +7,12 @@ import { NgForm } from '@angular/forms';
 
 import {ActivatedRoute, Params} from '@angular/router';
 
-
 @Component({
-  selector: 'app-list-students',
-  templateUrl: './list-students.component.html',
-  styleUrls: ['./list-students.component.css']
+  selector: 'app-list-grados-admin',
+  templateUrl: './list-grados-admin.component.html',
+  styleUrls: ['./list-grados-admin.component.css']
 })
-export class ListStudentsComponent implements OnInit {
+export class ListGradosAdminComponent implements OnInit {
 
   constructor(private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute) { 
     _CargaScripts.Carga(["tablas"]);
@@ -23,18 +23,14 @@ export class ListStudentsComponent implements OnInit {
 
   ngOnInit() {
     this.getListWorkers();
+
   }
 
   getListWorkers(){
 
-    var idGrado = this.route.snapshot.params['id'];
+  const idGrado = this.route.snapshot.params['id'];
 
-    idGrado = this.capitalize(idGrado);
-
-    var guardar = "Estudiantes/" + idGrado.split('S')[0] + "/Seccion" + idGrado.split('n')[1] ;
-
-
-    this.dataApi.getAllWorkers(guardar).subscribe( Workers => {
+    this.dataApi.getAllWorkers("Grados/GradosBachillerato/" + idGrado).subscribe( Workers => {
       this.Workers = Workers;
     });
   }
@@ -51,10 +47,6 @@ export class ListStudentsComponent implements OnInit {
   onPreUpdateWorker(worker: WorkersInterface){
     console.log('worker', worker);
     this.dataApi.selectedWorker = Object.assign({}, worker); //guarda los datos en un objeto
-  }
-
-  capitalize(word) {
-    return word[0].toUpperCase() + word.slice(1);
   }
 
 }

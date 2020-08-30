@@ -20,9 +20,9 @@ export class ContabilidadComponent implements OnInit {
   }
 
   getListWorkers(){
-    this.dataApi.getAllWorkers().subscribe( Workers => {
-      this.Workers = Workers;
-    });
+    //this.dataApi.getAllWorkers().subscribe( Workers => {
+    //  this.Workers = Workers;
+    //});
   }
 
 

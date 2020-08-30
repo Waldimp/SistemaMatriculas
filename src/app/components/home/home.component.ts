@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   public Worker = ''; 
 
   ngOnInit() {
-    this.dataApi.getAllWorkers().subscribe(Workers => {
+    this.dataApi.getAllWorkers("xd").subscribe(Workers => {
       console.log('WORKERS', Workers );
       this.Workers = Workers;
     })

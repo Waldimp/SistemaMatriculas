@@ -17,6 +17,8 @@ import { ListGradosComponent } from './components/list-grados/list-grados.compon
 import { FirstYearComponent } from './bach/first-year/first-year.component';
 import { ThirdYearComponent } from './bach/third-year/third-year.component';
 import { SecondYearComponent } from './bach/second-year/second-year.component';
+import { ListGradosAdminComponent } from './components/admin/list-grados-admin/list-grados-admin.component';
+import { DashboardAdminComponent } from './components/admin/dashboard-admin/dashboard-admin.component';
 
 const routes: Routes = [
   {
@@ -32,7 +34,13 @@ const routes: Routes = [
     path: 'planilla/:id', component: DetailsPlanillasComponent //TO DO: Only user auth
   },
   {
-    path: 'admin/list-students', component: ListStudentsComponent //TO DO: Only user auth
+    path: 'admin/list-gradosAdmin/:id', component: ListGradosAdminComponent //TO DO: Only user auth
+  },
+  {
+    path: 'admin/list-students/:id', component: ListStudentsComponent //TO DO: Only user auth
+  },
+  {
+    path: 'admin/dashboard', component: DashboardAdminComponent //TO DO: Only user auth
   },
   {
     path: 'users/list-gradosBach', component: ListGradosComponent //TO DO: Only user auth

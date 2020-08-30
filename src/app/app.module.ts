@@ -37,6 +37,8 @@ import { FirstYearComponent } from './bach/first-year/first-year.component';
 import { SecondYearComponent } from './bach/second-year/second-year.component';
 import { ThirdYearComponent } from './bach/third-year/third-year.component';
 import { EditarEstudianteComponent } from './components/admin/editar-estudiante/editar-estudiante.component';
+import { ListGradosAdminComponent } from './components/admin/list-grados-admin/list-grados-admin.component';
+import { DashboardAdminComponent } from './components/admin/dashboard-admin/dashboard-admin.component';
 
 
 @NgModule({
@@ -63,7 +65,9 @@ import { EditarEstudianteComponent } from './components/admin/editar-estudiante/
     FirstYearComponent,
     SecondYearComponent,
     ThirdYearComponent,
-    EditarEstudianteComponent
+    EditarEstudianteComponent,
+    ListGradosAdminComponent,
+    DashboardAdminComponent
   ],
   imports: [
     BrowserModule,

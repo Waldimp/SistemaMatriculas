@@ -20,9 +20,9 @@ export class DetailsPlanillasComponent implements OnInit {
   }
 
   getDetails(idWorker: string) : void{
-    this.dataApi.getOneWorker(idWorker).subscribe( Worker =>{
-      this.Worker = Worker;
-    } );
+    //this.dataApi.getOneWorker(idWorker).subscribe( Worker =>{
+    //  this.Worker = Worker;
+    //} );
   }
 
   calcularRenta(Sueldo){

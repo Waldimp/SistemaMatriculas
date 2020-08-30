@@ -22,12 +22,17 @@ export class DetailsStudentComponent implements OnInit {
 
   ngOnInit() {
 
-    const idWorker = this.route.snapshot.params['id'];
-    this.getDetails(idWorker);
+    var idWorker = this.route.snapshot.params['id'];
+
+    var guardar = "Estudiantes/" + idWorker.split('-')[0] + "/Seccion" + idWorker.split('-')[1] ;
+
+    var id = idWorker.split('-')[2];
+
+    this.getDetails(id, guardar);
   }
 
-  getDetails(idWorker: string) : void{
-    this.dataApi.getOneWorker(idWorker).subscribe( Worker =>{
+  getDetails(idWorker: string, guardar: string) : void{
+    this.dataApi.getOneWorker(idWorker, guardar).subscribe( Worker =>{
       this.Student = Worker;
     } );
   }

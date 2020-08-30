@@ -24,14 +24,17 @@ export class EditarEstudianteComponent implements OnInit {
   ngOnInit() {
 
     const idWorker = this.route.snapshot.params['id'];
-    this.getDetails(idWorker);
+    var guardarxd = "Estudiantes/" + idWorker.split('-')[0] + "/Seccion" + idWorker.split('-')[1] ;
+    var id = idWorker.split('-')[2];
+
+    this.getDetails(id, guardarxd);
 
     console.log(idWorker);
 
   }
 
-  getDetails(idWorker: string) : void{
-    this.dataApi.getOneWorker(idWorker).subscribe( Worker =>{
+  getDetails(idWorker: string, guardarxd: string) : void{
+    this.dataApi.getOneWorker(idWorker, guardarxd).subscribe( Worker =>{
       this.Student = Worker;
     } );
   }

@@ -22,7 +22,7 @@ export class ListWorkersComponent implements OnInit {
   }
 
   getListWorkers(){
-    this.dataApi.getAllWorkers().subscribe( Workers => {
+    this.dataApi.getAllWorkers("xd").subscribe( Workers => {
       this.Workers = Workers;
     });
   }

@@ -25,7 +25,9 @@ export class DataApiService {
     id: null
   };
 
-  getAllWorkers(){
+  getAllWorkers(coleccionObtener: string){
+    this.WorkersCollection = this.afs.collection<WorkersInterface>(coleccionObtener);
+
     return this.Workers = this.WorkersCollection.snapshotChanges()
     .pipe(map(changes =>{
       return changes.map(action =>{
@@ -34,10 +36,16 @@ export class DataApiService {
         return data;
       })
     }))
+    
    }
 
-   getOneWorker(idWorker: string){
-    this.workerDoc = this.afs.doc<WorkersInterface>(`Estudiantes/${idWorker}`);
+   getOneWorker(idWorker: string, guardar: string){
+
+    var impr = guardar + "/" + idWorker;
+    alert(impr);
+
+    this.workerDoc = this.afs.doc<WorkersInterface>(impr);
+
     return this.Worker = this.workerDoc.snapshotChanges().pipe(map(action =>{
       if(action.payload.exists === false){
         return null;
