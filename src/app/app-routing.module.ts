@@ -56,7 +56,7 @@ const routes: Routes = [
     path: 'users/profile', component: ProfileComponent //TO DO: Only user auth
   },
   {
-    path: 'users/formulario', component: FormularioComponent //TO DO: Only user auth
+    path: 'users/formulario/:id', component: FormularioComponent //TO DO: Only user auth
   },
   {
     path: '**', component: Page404Component

@@ -49,8 +49,8 @@ export class DataApiService {
     }));
    }
 
-  addWorker(Worker: WorkersInterface):void {
-    this.WorkersCollection = this.afs.collection<WorkersInterface>('Estudiantes/Tercero/SeccionA');
+  addWorker(Worker: WorkersInterface, coleccionGuardar: string):void {
+    this.WorkersCollection = this.afs.collection<WorkersInterface>(coleccionGuardar);
     this.WorkersCollection.add(Worker);
   }
 

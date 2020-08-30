@@ -26,7 +26,7 @@ export class ModalComponent implements OnInit {
     console.log(workerForm.value.id);
 
     if(workerForm.value.id == null){
-      this.dataApi.addWorker(workerForm.value); //nuevo trabajador
+      //this.dataApi.addWorker(workerForm.value); //nuevo trabajador
     } else{
       
       this.dataApi.updateWorker(workerForm.value); //editar trabajador

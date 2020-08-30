@@ -40,10 +40,13 @@ export class EditarEstudianteComponent implements OnInit {
 
   onSaveWorker(workerForm : NgForm):void{
 
+    const idGrado = this.route.snapshot.params['id'];
+    var guardar = "Estudiantes/" + idGrado.split('-')[0] + "/Seccion" + idGrado.split('-')[1] ;
+
     console.log(workerForm.value.id);
 
     if(workerForm.value.id == null){
-      this.dataApi.addWorker(workerForm.value); //nuevo estudiante
+      this.dataApi.addWorker(workerForm.value, guardar); //nuevo estudiante
     } else{
       
       this.dataApi.updateWorker(workerForm.value); //editar estudiante
