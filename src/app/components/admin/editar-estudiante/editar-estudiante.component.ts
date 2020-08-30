@@ -1,0 +1,59 @@
+import { Component, OnInit } from '@angular/core';
+import {CargarScriptsService} from '../../../cargar-scripts.service';
+
+import { DataApiService } from '../../../services/data-api.service';
+import { WorkersInterface } from '../../../models/workers';
+import { NgForm } from '@angular/forms';
+
+import {ActivatedRoute, Params} from '@angular/router';
+
+@Component({
+  selector: 'app-editar-estudiante',
+  templateUrl: './editar-estudiante.component.html',
+  styleUrls: ['./editar-estudiante.component.css']
+})
+export class EditarEstudianteComponent implements OnInit {
+
+  constructor(private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute) {
+    _CargaScripts.Carga(["script"]);
+    _CargaScripts.Carga(["jquery.min"]);
+  }
+
+  public Student: WorkersInterface = {};
+
+  ngOnInit() {
+
+    const idWorker = this.route.snapshot.params['id'];
+    this.getDetails(idWorker);
+
+    console.log(idWorker);
+
+  }
+
+  getDetails(idWorker: string) : void{
+    this.dataApi.getOneWorker(idWorker).subscribe( Worker =>{
+      this.Student = Worker;
+    } );
+  }
+
+
+
+  onSaveWorker(workerForm : NgForm):void{
+
+    console.log(workerForm.value.id);
+
+    if(workerForm.value.id == null){
+      this.dataApi.addWorker(workerForm.value); //nuevo estudiante
+    } else{
+      
+      this.dataApi.updateWorker(workerForm.value); //editar estudiante
+    }
+
+    workerForm.resetForm();
+
+  }
+
+
+
+
+}

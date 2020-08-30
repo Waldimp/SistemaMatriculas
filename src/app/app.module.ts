@@ -36,6 +36,7 @@ import { ListGradosComponent } from './components/list-grados/list-grados.compon
 import { FirstYearComponent } from './bach/first-year/first-year.component';
 import { SecondYearComponent } from './bach/second-year/second-year.component';
 import { ThirdYearComponent } from './bach/third-year/third-year.component';
+import { EditarEstudianteComponent } from './components/admin/editar-estudiante/editar-estudiante.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { ThirdYearComponent } from './bach/third-year/third-year.component';
     ListGradosComponent,
     FirstYearComponent,
     SecondYearComponent,
-    ThirdYearComponent
+    ThirdYearComponent,
+    EditarEstudianteComponent
   ],
   imports: [
     BrowserModule,

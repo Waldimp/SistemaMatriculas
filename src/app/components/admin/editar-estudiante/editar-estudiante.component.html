@@ -5,39 +5,39 @@
     <p>Por favor rellenar los campos con los datos que se le solicitan.</p>
   </header>
   
-  <form>
+  <form #formWorker="ngForm" (ngSubmit)="onSaveWorker(formWorker)">
 
     <!--General -->
     <div class="form-group">
       <h2 class="heading">Informacion conforme partida de nacimiento</h2>
 
-      <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+      <input type="hidden" name="id" value="{{Student.id}}"  [(ngModel)]="this.dataApi.selectedWorker.id">
       
       <div class="controls">
-        <input type="text" id="apellido" class="floatLabel" name="apellido" value="{{Student.apellido}}" disabled>
+        <input type="text" id="apellido" class="floatLabel" name="apellido" value="{{Student.apellido}}" [(ngModel)]="this.dataApi.selectedWorker.apellido">
         <label for="apellido" class="active">Apellidos</label>
       </div>
       
   
       <div class="controls">
-        <input type="text" id="nombre" class="floatLabel" name="nombre" value="{{Student.nombre}}" disabled>
+        <input type="text" id="nombre" class="floatLabel" name="nombre" value="{{Student.nombre}}" [(ngModel)]="this.dataApi.selectedWorker.nombre">
         <label for="nombre" class="active">Nombres</label>
       </div>
   
       <div class="controls">
         <i class="fa fa-sort"></i>
-        <select class="floatLabel" name="grado" value="{{Student.grado}}" disabled>
+        <select class="floatLabel" name="grado" value="{{Student.grado}}" [(ngModel)]="this.dataApi.selectedWorker.grado">
           <option value=""></option>
           <option value="Primero">Primer Año</option>
           <option value="Segundo">Segundo Año</option>
-          <option value="Tercero">Tercer Año</option>
+          <option value="Tercero">Terce Año</option>
         </select>
         <label for="Grado" class="active">Grado</label>
       </div>
   
       <div class="controls">
         <i class="fa fa-sort"></i>
-        <select class="floatLabel" name="especialidad" value="{{Student.especialidad}}" disabled>
+        <select class="floatLabel" name="especialidad" value="{{Student.especialidad}}" [(ngModel)]="this.dataApi.selectedWorker.especialidad">
           <option value=""></option>
           <option value="Info">Sistemas Informaticos</option>
           <option value="Eca">Electronica</option>
@@ -52,7 +52,7 @@
   
       <div class="controls">
         <i class="fa fa-sort"></i>
-        <select class="floatLabel" name="seccion" value="{{Student.seccion}}" disabled>
+        <select class="floatLabel" name="seccion" value="{{Student.seccion}}" [(ngModel)]="this.dataApi.selectedWorker.seccion">
           <option value=""></option>
           <option value="A">A</option>
           <option value="B">B</option>
@@ -64,34 +64,35 @@
         </select>
         <label for="Seccion" class="active">Seccion</label>
       </div>
+
       <div class="controls">
-        <input type="number" id="codigo" class="floatLabel" name="codigo" value="{{Student.codigo}}" disabled>
+        <input type="number" id="codigo" class="floatLabel" name="codigo" value="{{Student.codigo}}"  [(ngModel)]="this.dataApi.selectedWorker.codigo">
         <label for="codigo" class="active">Codigo</label>
       </div>
 
     
   
     <div class="controls">
-      <input type="text" id="Departamento" class="floatLabel" name="departamento" value="{{Student.departamento}}" disabled>
+      <input type="text" id="Departamento" class="floatLabel" name="departamento" value="{{Student.departamento}}" [(ngModel)]="this.dataApi.selectedWorker.departamento">
       <label for="departamento" class="active">Departamento de nacimiento</label>
     </div>
   
   <div class="controls">
-    <input type="text" id="Municipio" class="floatLabel" name="municipio" value="{{Student.municipio}}" disabled>
+    <input type="text" id="Municipio" class="floatLabel" name="municipio" value="{{Student.municipio}}" [(ngModel)]="this.dataApi.selectedWorker.municipio">
     <label for="municipio" class="active">Municipio de nacimiento</label>
   </div>
   <div class="controls">
-    <input type="text" id="Nacionalidad" class="floatLabel" name="nacionalidad" value="{{Student.nacionalidad}}" disabled>
+    <input type="text" id="Nacionalidad" class="floatLabel" name="nacionalidad" value="{{Student.nacionalidad}}" [(ngModel)]="this.dataApi.selectedWorker.nacionalidad">
     <label for="Nacionalidad" class="active">Nacionalidad</label>
   </div>
   <div class="controls">
-    <input type="number" id="Dia" class="floatLabel" name="dia" value="{{Student.dia}}" disabled>
+    <input type="number" id="Dia" class="floatLabel" name="dia" value="{{Student.dia}}" [(ngModel)]="this.dataApi.selectedWorker.dia">
     <label for="Dia" class="active">Dia de nacimiento</label>
   </div>
   
   <div class="controls">
     <i class="fa fa-sort"></i>
-    <select class="floatLabel" name="mes" value="{{Student.mes}}" disabled>
+    <select class="floatLabel" name="mes" value="{{Student.mes}}" [(ngModel)]="this.dataApi.selectedWorker.mes">
       <option value=""></option>
       <option value="Enero">Enero</option>
       <option value="Febrero">Febrero</option>
@@ -110,42 +111,42 @@
   </div>
   
   <div class="controls">
-    <input type="number" id="año" class="floatLabel" name="anio" value="{{Student.anio}}" disabled>
+    <input type="number" id="año" class="floatLabel" name="anio" value="{{Student.anio}}" [(ngModel)]="this.dataApi.selectedWorker.anio">
     <label for="año" class="active">Año</label>
   </div>
   
   <div class="controls">
-    <input type="text" id="direccion" class="floatLabel" name="direccion" value="{{Student.direccion}}" disabled>
+    <input type="text" id="direccion" class="floatLabel" name="direccion" value="{{Student.direccion}}" [(ngModel)]="this.dataApi.selectedWorker.direccion">
     <label for="direccion" class="active">Direccion</label>
   </div>
   
   <div class="controls">
-    <input type="number" id="telefono" class="floatLabel" name="telefono" value="{{Student.telefono}}" disabled>
+    <input type="number" id="telefono" class="floatLabel" name="telefono" value="{{Student.telefono}}" [(ngModel)]="this.dataApi.selectedWorker.telefono">
     <label for="telefono" class="active">Telefono</label>
   </div>
   
   <div class="controls">
-    <input type="text" id="transporte" class="floatLabel" name="transporte" value="{{Student.transporte}}" disabled>
+    <input type="text" id="transporte" class="floatLabel" name="transporte" value="{{Student.transporte}}" [(ngModel)]="this.dataApi.selectedWorker.transporte">
     <label for="transporte" class="active">Tipo de transporte que utiliza</label>
   </div>
   
   <div class="controls">
-    <input type="text" id="parvularia" class="floatLabel" name="parvularia" value="{{Student.parvularia}}" disabled>
+    <input type="text" id="parvularia" class="floatLabel" name="parvularia" value="{{Student.parvularia}}" [(ngModel)]="this.dataApi.selectedWorker.parvularia">
     <label for="parvularia" class="active">Centro educativo donde estudio PARVULARIA</label>
   </div>
   
   <div class="controls">
-    <input type="text" id="1ciclo" class="floatLabel" name="primerCiclo" value="{{Student.primerCiclo}}" disabled>
+    <input type="text" id="1ciclo" class="floatLabel" name="primerCiclo" value="{{Student.primerCiclo}}" [(ngModel)]="this.dataApi.selectedWorker.primerCiclo">
     <label for="1ciclo" class="active">Centro educativo donde estudio I CICLO</label>
   </div>
   
   <div class="controls">
-    <input type="text" id="2ciclo" class="floatLabel" name="segundoCiclo" value="{{Student.segundoCiclo}}" disabled>
+    <input type="text" id="2ciclo" class="floatLabel" name="segundoCiclo" value="{{Student.segundoCiclo}}" [(ngModel)]="this.dataApi.selectedWorker.segundoCiclo">
     <label for="2ciclo" class="active">Centro educativo donde estudio II CICLO</label>
   </div>
   
   <div class="controls">
-    <input type="text" id="3ciclo" class="floatLabel" name="tercerCiclo" value="{{Student.tercerCiclo}}" disabled>
+    <input type="text" id="3ciclo" class="floatLabel" name="tercerCiclo" value="{{Student.tercerCiclo}}" [(ngModel)]="this.dataApi.selectedWorker.tercerCiclo">
     <label for="3ciclo" class="active">Centro educativo donde estudio III CICLO</label>
   </div>
   
@@ -161,46 +162,47 @@
       <div class="controls2">
         <h1>Tiene hermanos matriculados en:</h1>
         <br>
-      <input id='colegio' type="radio" name='turno' id="colegio" disabled value="colegio"  />
-      <label for="colegio" class="active">Colegio</label>
+      
+      <input id='colegio' type="radio" name='turno' id="colegio"  value="colegio"  [(ngModel)]="this.dataApi.selectedWorker.turno"/>
+      <label for="colegio" id="lblRadio" class="active">Colegio</label>
 
-       <input id='centro' type="radio" name='turno' id="centro" disabled value="centro"/>
-      <label for="centro" class="active">Centro Escolar</label>
+       <input id='centro' type="radio" name='turno' id="centro" value="centro"  [(ngModel)]="this.dataApi.selectedWorker.turno"/>
+      <label for="centro" id="lblRadio2" class="active">Centro Escolar</label>
     </div>
     
    
     <div class="controls">
-      <input type="text" id="hermano1" class="floatLabel" name="hermano1" value="{{Student.hermano1}}" disabled>
+      <input type="text" id="hermano1" class="floatLabel" name="hermano1" value="{{Student.hermano1}}" [(ngModel)]="this.dataApi.selectedWorker.hermano1">
       <label for="hermano1" class="active">Nombre</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="gradoh1" class="floatLabel" name="gradoh1" value="{{Student.gradoh1}}" disabled>
+      <input type="text" id="gradoh1" class="floatLabel" name="gradoh1" value="{{Student.gradoh1}}" [(ngModel)]="this.dataApi.selectedWorker.gradoh1">
       <label for="gradoh1" class="active">Grado</label>
     </div>
   
     <div class="controls">
-      <input type="number" id="codh1" class="floatLabel" name="codh1" value="{{Student.codh1}}" disabled>
+      <input type="number" id="codh1" class="floatLabel" name="codh1" value="{{Student.codh1}}" [(ngModel)]="this.dataApi.selectedWorker.codh1">
       <label for="codh1" class="active">Codigo</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="hermano2" class="floatLabel" name="hermano2" value="{{Student.hermano2}}" disabled>
+      <input type="text" id="hermano2" class="floatLabel" name="hermano2" value="{{Student.hermano2}}" [(ngModel)]="this.dataApi.selectedWorker.hermano2">
       <label for="hermano2" class="active">Nombre</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="gradoh2" class="floatLabel" name="gradoh2" value="{{Student.gradoh2}}" disabled>
+      <input type="text" id="gradoh2" class="floatLabel" name="gradoh2" value="{{Student.gradoh2}}" [(ngModel)]="this.dataApi.selectedWorker.gradoh2">
       <label for="gradoh2" class="active">Grado</label>
     </div>
   
     <div class="controls">
-      <input type="number" id="codh2" class="floatLabel" name="codh2" value="{{Student.codh2}}" disabled>
+      <input type="number" id="codh2" class="floatLabel" name="codh2" value="{{Student.codh2}}" [(ngModel)]="this.dataApi.selectedWorker.codh2">
       <label for="codh2" class="active">Codigo</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="religion" class="floatLabel"  name="religion" value="{{Student.religion}}" disabled>
+      <input type="text" id="religion" class="floatLabel"  name="religion" value="{{Student.religion}}" [(ngModel)]="this.dataApi.selectedWorker.religion">
       <label for="religion" class="active">¿Que religion profesa?</label>
     </div>
     <!--
@@ -223,45 +225,45 @@
       <h1>¿El estudiante es alergico a algun medicamento?</h1>
       <br>
       <br>
-    <input id='AlergiaV' name="alergia" type="radio" id="AlergiaV" value="AlergiaV"  disabled/>
-    <label for="AlergiaV" class="active">Si</label>
+    <input id='AlergiaV' name="alergia" type="radio" id="AlergiaV" value="AlergiaV"   [(ngModel)]="this.dataApi.selectedWorker.alergia"/>
+    <label for="AlergiaV" id="lblAlergia1" class="active">Si</label>
   
-    <input id='AlergiF' name="alergia" type="radio" id="AlergiaF" value="AlergiaF"  disabled/>
-    <label for="AlergiF" class="active">No</label>
+    <input id='AlergiF' name="alergia" type="radio" id="AlergiaF" value="AlergiaF"  [(ngModel)]="this.dataApi.selectedWorker.alergia"/>
+    <label for="AlergiF" id="lblAlergia2" class="active">No</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="alergiRespuesta" class="floatLabel" name="alergiRespuesta" value="{{Student.alergiRespuesta}}" disabled>
+      <input type="text" id="alergiRespuesta" class="floatLabel" name="alergiRespuesta" value="{{Student.alergiRespuesta}}" [(ngModel)]="this.dataApi.selectedWorker.alergiRespuesta">
       <label for="AlergiRespuesta" class="active">Si su respuesta es afirmativa, indicar a que es alergico: </label>
     </div>
   
     <div class="controls">
-      <input type="text" id="impedimiento" class="floatLabel" name="impedimiento" value="{{Student.impedimiento}}" disabled>
+      <input type="text" id="impedimiento" class="floatLabel" name="impedimiento" value="{{Student.impedimiento}}"  [(ngModel)]="this.dataApi.selectedWorker.impedimento">
       <label for="Impedimiento" class="active">Tiene el estudiante algun impedimento fisico o enfermedad cronica, favor especificar: </label>
     </div>
   
     <div class="controls">
-      <input type="text" id="fiebre" class="floatLabel" name="fiebre" value="{{Student.fiebre}}" disabled>
+      <input type="text" id="fiebre" class="floatLabel" name="fiebre" value="{{Student.fiebre}}" [(ngModel)]="this.dataApi.selectedWorker.fiebre">
       <label for="Fiebre" class="active">En caso de fiebre administrar: </label> 
     </div>
   
     <div class="controls">
-      <input type="text" id="dolordeestomago" class="floatLabel" name="dolordeestomago" value="{{Student.dolordeestomago}}" disabled>
+      <input type="text" id="dolordeestomago" class="floatLabel" name="dolordeestomago" value="{{Student.dolordeestomago}}" [(ngModel)]="this.dataApi.selectedWorker.dolordeestomago">
       <label for="Dolordeestomago" class="active">En caso de dolor de estomago administrar: </label>
     </div>
   
     <div class="controls">
-      <input type="text" id="dolordecabeza" class="floatLabel" name="dolordecabeza"  [(ngModel)]="this.dataApi.selectedWorker.dolordecabeza">
+      <input type="text" id="dolordecabeza" class="floatLabel" name="dolordecabeza" value="{{Student.dolordecabeza}}"  [(ngModel)]="this.dataApi.selectedWorker.dolordecabeza">
       <label for="Dolordecabeza" class="active">En caso de dolor de cabeza administrar: </label>
     </div>
   
     <div class="controls">
-      <input type="text" id="medicamentopermanente" class="floatLabel" name="medicamentopermanente" [(ngModel)]="this.dataApi.selectedWorker.medicamentopermanente">
+      <input type="text" id="medicamentopermanente" class="floatLabel" name="medicamentopermanente" value="{{Student.medicamentopermanente}}" [(ngModel)]="this.dataApi.selectedWorker.medicamentopermanente">
       <label for="Medicamentopermanente" class="active">Medicamento prescrito de caracter permanente: </label>
     </div>
     
     <div class="controls">
-      <input type="text" id="grupo" class="floatLabel" name="grupo" value="{{Student.grupo}}" disabled>
+      <input type="text" id="grupo" class="floatLabel" name="grupo" value="{{Student.grupo}}" [(ngModel)]="this.dataApi.selectedWorker.grupo">
       <label for="grupo" class="active">Pertenece a un grupo juvenil, grupo religioso, etc: </label>
     </div>
   
@@ -291,7 +293,7 @@
     </div>
   -->
     <div class="controls">
-      <input type="text" id="conocimiento" class="floatLabel" name="conocimiento" value="{{Student.conocimiento}}" disabled>
+      <input type="text" id="conocimiento" class="floatLabel" name="conocimiento" value="{{Student.conocimiento}}" [(ngModel)]="this.dataApi.selectedWorker.conocimiento">
       <label for="conocimiento" class="active">¿Conocimientos especiales que posee?(artes marciales, guardavida, informatica, primeros auxilios, idiomas,etc.) </label>
     </div>
   
@@ -303,7 +305,7 @@
       <h2 class="heading">Situacion familiar del/la estudiante</h2>
       
       <div class="controls">
-        <input type="number" id="miembros" class="floatLabel" name="miembros" value="{{Student.miembros}}" disabled>
+        <input type="number" id="miembros" class="floatLabel" name="miembros" value="{{Student.miembros}}" [(ngModel)]="this.dataApi.selectedWorker.miembros">
         <label for="miembros" class="active">Numeros de miembros que conforman su familia:</label>
       </div>
       
@@ -345,52 +347,52 @@
     <h2 class="heading">Datos Familiares</h2>
   
     <div class="controls">
-      <input type="text" id="papa" class="floatLabel" name="papa" value="{{Student.papa}}" disabled>
+      <input type="text" id="papa" class="floatLabel" name="papa" value="{{Student.papa}}" [(ngModel)]="this.dataApi.selectedWorker.papa">
       <label for="papa" class="active">Nombre del padre:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="papad" class="floatLabel" name="papad" value="{{Student.papad}}" disabled>
+      <input type="text" id="papad" class="floatLabel" name="papad" value="{{Student.papad}}" [(ngModel)]="this.dataApi.selectedWorker.papad">
       <label for="papad" class="active">Direccion:</label>
     </div>
   
     <div class="controls">
-      <input type="number" id="papatel" class="floatLabel" name="papatel" value="{{Student.papatel}}" disabled>
+      <input type="number" id="papatel" class="floatLabel" name="papatel" value="{{Student.papatel}}" [(ngModel)]="this.dataApi.selectedWorker.papatel">
       <label for="papatel" class="active">Tel. casa:</label>
     </div>
   
     <div class="controls">
-      <input type="number" id="papacel" class="floatLabel" name="papacel" value="{{Student.papacel}}" disabled>
+      <input type="number" id="papacel" class="floatLabel" name="papacel" value="{{Student.papacel}}" [(ngModel)]="this.dataApi.selectedWorker.papacel">
       <label for="papa-cel" class="active">Celular:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="papaprofesion" class="floatLabel" name="papaprofesion" value="{{Student.papaprofesion}}" disabled>
+      <input type="text" id="papaprofesion" class="floatLabel" name="papaprofesion" value="{{Student.papaprofesion}}" [(ngModel)]="this.dataApi.selectedWorker.papaprofesion">
       <label for="papaprofesion" class="active">Profesion u oficio:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="papalugardt" class="floatLabel" name="papalugardt" value="{{Student.papalugardt}}" disabled>
+      <input type="text" id="papalugardt" class="floatLabel" name="papalugardt" value="{{Student.papalugardt}}" [(ngModel)]="this.dataApi.selectedWorker.papalugardt">
       <label for="papalugardt" class="active">Lugar de trabajo: </label>
     </div>
   
     <div class="controls">
-      <input type="number" id="papateltrabajo" class="floatLabel" name="papateltrabajo" value="{{Student.papateltrabajo}}" disabled>
+      <input type="number" id="papateltrabajo" class="floatLabel" name="papateltrabajo" value="{{Student.papateltrabajo}}" [(ngModel)]="this.dataApi.selectedWorker.papateltrabajo">
       <label for="papateltrabajo" class="active">Tel.trabajo:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="papareligion" class="floatLabel" name="papareligion" value="{{Student.papareligion}}" disabled>
+      <input type="text" id="papareligion" class="floatLabel" name="papareligion" value="{{Student.papareligion}}" [(ngModel)]="this.dataApi.selectedWorker.papareligion">
       <label for="papareligion" class="active">Religion:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="papagrupo" class="floatLabel" name="papagrupo" value="{{Student.papagrupo}}" disabled>
+      <input type="text" id="papagrupo" class="floatLabel" name="papagrupo" value="{{Student.papagrupo}}" [(ngModel)]="this.dataApi.selectedWorker.papagrupo">
       <label for="papagrupo" class="active">Grupo o asociacion religiosa a la que pertenece:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="papaiglesia" class="floatLabel" name="papaiglesia" value="{{Student.papaiglesia}}" disabled>
+      <input type="text" id="papaiglesia" class="floatLabel" name="papaiglesia" value="{{Student.papaiglesia}}" [(ngModel)]="this.dataApi.selectedWorker.papaiglesia">
       <label for="papaiglesia" class="active">Iglesia:</label>
     </div>
   
@@ -416,52 +418,52 @@
   -->
     
     <div class="controls">
-      <input type="text" id="mama" class="floatLabel" name="mama" value="{{Student.mama}}" disabled>
+      <input type="text" id="mama" class="floatLabel" name="mama" value="{{Student.mama}}" [(ngModel)]="this.dataApi.selectedWorker.mama">
       <label for="mama" class="active">Nombre de la madre:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="mama" class="floatLabel" name="mamad" value="{{Student.mamad}}" disabled>
+      <input type="text" id="mama" class="floatLabel" name="mamad" value="{{Student.mamad}}" [(ngModel)]="this.dataApi.selectedWorker.mamad">
       <label for="mamad" class="active">Direccion:</label>
     </div>
   
     <div class="controls">
-      <input type="number" id="mamatel" class="floatLabel" name="mamatel" value="{{Student.mamatel}}" disabled>
+      <input type="number" id="mamatel" class="floatLabel" name="mamatel" value="{{Student.mamatel}}" [(ngModel)]="this.dataApi.selectedWorker.mamatel">
       <label for="mamatel" class="active">Tel. casa:</label>
     </div>
   
     <div class="controls">
-      <input type="number" id="mamacel" class="floatLabel" name="mamacel" value="{{Student.mamacel}}" disabled>
+      <input type="number" id="mamacel" class="floatLabel" name="mamacel" value="{{Student.mamacel}}" [(ngModel)]="this.dataApi.selectedWorker.mamacel">
       <label for="mamacel" class="active">Celular:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="mamaprofesion" class="floatLabel" name="mamaprofesion" value="{{Student.mamaprofesion}}" disabled>
+      <input type="text" id="mamaprofesion" class="floatLabel" name="mamaprofesion" value="{{Student.mamaprofesion}}" [(ngModel)]="this.dataApi.selectedWorker.mamaprofesion">
       <label for="mamaprofesion" class="active">Profesion u oficio:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="mamalugardt" class="floatLabel" name="mamalugardt" value="{{Student.mamalugardt}}" disabled>
+      <input type="text" id="mamalugardt" class="floatLabel" name="mamalugardt" value="{{Student.mamalugardt}}" [(ngModel)]="this.dataApi.selectedWorker.mamalugardt">
       <label for="mamalugardt" class="active">Lugar de trabajo: </label>
     </div>
   
     <div class="controls">
-      <input type="number" id="mamateltrabajo" class="floatLabel" name="mamateltrabajo" value="{{Student.mamateltrabajo}}" disabled>
+      <input type="number" id="mamateltrabajo" class="floatLabel" name="mamateltrabajo" value="{{Student.mamateltrabajo}}" [(ngModel)]="this.dataApi.selectedWorker.mamateltrabajo">
       <label for="mamateltrabajo" class="active">Tel.trabajo:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="mamareligion" class="floatLabel" name="mamareligion" value="{{Student.mamareligion}}" disabled>
+      <input type="text" id="mamareligion" class="floatLabel" name="mamareligion" value="{{Student.mamareligion}}" [(ngModel)]="this.dataApi.selectedWorker.mamareligion">
       <label for="mamareligion" class="active">Religion:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="papagrupo" class="floatLabel" name="mamagrupo" value="{{Student.mamagrupo}}" disabled>
+      <input type="text" id="papagrupo" class="floatLabel" name="mamagrupo" value="{{Student.mamagrupo}}" [(ngModel)]="this.dataApi.selectedWorker.mamagrupo">
       <label for="mamagrupo" class="active">Grupo o asociacion religiosa a la que pertenece:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="mamaaiglesia" class="floatLabel" name="mamaiglesia" value="{{Student.mamaiglesia}}" disabled>
+      <input type="text" id="mamaaiglesia" class="floatLabel" name="mamaiglesia" value="{{Student.mamaiglesia}}" [(ngModel)]="this.dataApi.selectedWorker.mamaiglesia">
       <label for="mamaiglesia" class="active">Iglesia:</label>
     </div>
   
@@ -487,42 +489,42 @@
   
   -->
     <div class="controls">
-      <input type="text" id="encargado" class="floatLabel" name="encargado" value="{{Student.encargado}}" disabled>
+      <input type="text" id="encargado" class="floatLabel" name="encargado" value="{{Student.encargado}}" [(ngModel)]="this.dataApi.selectedWorker.encargado">
       <label for="encargado" class="active">Nombre del encargado:(Llenar unicamente si el/la estudiante esta a cargo de persona distinta a padre o madre.)</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="parentesco" class="floatLabel" name="parentesco" value="{{Student.parentesco}}" disabled>
+      <input type="text" id="parentesco" class="floatLabel" name="parentesco" value="{{Student.parentesco}}" [(ngModel)]="this.dataApi.selectedWorker.parentesco">
       <label for="parentesco" class="active">Parentesco: </label>
     </div>
   
     <div class="controls">
-      <input type="number" id="encargadotel" class="floatLabel" name="encargadotel" value="{{Student.encargadotel}}" disabled>
+      <input type="number" id="encargadotel" class="floatLabel" name="encargadotel" value="{{Student.encargadotel}}" [(ngModel)]="this.dataApi.selectedWorker.encargadotel">
       <label for="encargadotel" class="active">Tel. Casa: </label>
     </div>
   
     <div class="controls">
-      <input type="number" id="encargadocel" class="floatLabel" name="encargadocel" value="{{Student.encargadocel}}" disabled>
+      <input type="number" id="encargadocel" class="floatLabel" name="encargadocel" value="{{Student.encargadocel}}" [(ngModel)]="this.dataApi.selectedWorker.encargadocel">
       <label for="encargadocel" class="active">Celular: </label>
     </div>
   
     <div class="controls">
-      <input type="text" id="encargadodirc" class="floatLabel" name="encargadodirc" value="{{Student.encargadodirc}}" disabled>
+      <input type="text" id="encargadodirc" class="floatLabel" name="encargadodirc" value="{{Student.encargadodirc}}" [(ngModel)]="this.dataApi.selectedWorker.encargadodirc">
       <label for="encargadodirc" class="active">Direccion:</label>
     </div>
   
     <div class="controls">
-      <input type="text" id="encargadoprofesion" class="floatLabel" name="encargadoprofesion" value="{{Student.encargadoprofesion}}" disabled>
+      <input type="text" id="encargadoprofesion" class="floatLabel" name="encargadoprofesion" value="{{Student.encargadoprofesion}}" [(ngModel)]="this.dataApi.selectedWorker.encargadoprofesion">
       <label for="encargadoprofesion" class="active">Profesion u oficio:</label>
     </div>
   
     <div class="controls"> 
-      <input type="text" id="encargadolugardt" class="floatLabel" name="encargadolugardt" value="{{Student.encargadolugardt}}" disabled>
+      <input type="text" id="encargadolugardt" class="floatLabel" name="encargadolugardt" value="{{Student.encargadolugardt}}" [(ngModel)]="this.dataApi.selectedWorker.encargadolugardt">
       <label for="encargadolugardt" class="active">Lugar de trabajo: </label>
     </div>
   
     <div class="controls">
-      <input type="number" id="encargadoteltrabajo" class="floatLabel" name="encargadoteltrabajo" value="{{Student.encargadoteltrabajo}}" disabled>
+      <input type="number" id="encargadoteltrabajo" class="floatLabel" name="encargadoteltrabajo" value="{{Student.encargadoteltrabajo}}" [(ngModel)]="this.dataApi.selectedWorker.encargadoteltrabajo">
       <label for="encargadoteltrabajo" class="active">Tel.trabajo:</label>
     </div>
     
@@ -530,7 +532,7 @@
     <!--  FIN -->
     <div class="form-group">
       <div class="controls">
-        <button>Imprimir Datos</button>
+        <button type="submit">Actualizar Solicitud</button>
       </div>
     </div>
     

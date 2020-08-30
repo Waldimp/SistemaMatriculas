@@ -11,10 +11,10 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 })
 export class DataApiService {
 
-  constructor(private afs: AngularFirestore) {
+  constructor(public afs: AngularFirestore) {
     this.WorkersCollection = afs.collection<WorkersInterface>('Estudiantes');
     this.Workers = this.WorkersCollection.valueChanges();
-   }
+  }
 
   private WorkersCollection: AngularFirestoreCollection<WorkersInterface>;
   private Workers: Observable<WorkersInterface[]>;
@@ -50,6 +50,7 @@ export class DataApiService {
    }
 
   addWorker(Worker: WorkersInterface):void {
+    this.WorkersCollection = this.afs.collection<WorkersInterface>('Estudiantes/Tercero/SeccionA');
     this.WorkersCollection.add(Worker);
   }
 

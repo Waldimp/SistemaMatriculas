@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { ListWorkersComponent } from './components/admin/list-workers/list-workers.component';
+import { EditarEstudianteComponent } from './components/admin/editar-estudiante/editar-estudiante.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { ProfileComponent } from './components/users/profile/profile.component';
@@ -24,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'student/:id', component: DetailsStudentComponent //TO DO: Only user auth
+  },
+  {
+    path: 'editar/:id', component: EditarEstudianteComponent //TO DO: Only user auth
   },
   {
     path: 'planilla/:id', component: DetailsPlanillasComponent //TO DO: Only user auth
