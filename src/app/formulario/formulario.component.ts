@@ -4,7 +4,7 @@ import {CargarScriptsService} from './../cargar-scripts.service';
 import { DataApiService } from '../services/data-api.service';
 import { WorkersInterface } from '../models/workers';
 import { NgForm } from '@angular/forms';
-
+import { Router } from '@angular/router';
 import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor( private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute) {
+  constructor(  private router:Router,private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute) {
     _CargaScripts.Carga(["script"]);
     _CargaScripts.Carga(["jquery.min"]);
    }
@@ -37,14 +37,16 @@ export class FormularioComponent implements OnInit {
 
     if(workerForm.value.id == null){
       this.dataApi.addWorker(workerForm.value, guardar); //nuevo trabajador
+      this.onLogin();
     } else{
-      
       this.dataApi.updateWorker(workerForm.value); //editar trabajador
     }
 
     workerForm.resetForm();
 
   }
-
+  onLogin(): void{
+    this.router.navigate(['users/validarnpe']);
+  }
 
 }
