@@ -45,7 +45,7 @@ a {
 }
 
 .movie-card {
-  background-image: url();
+  background-image: url(../../../../src/assets/eca.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -58,39 +58,27 @@ a {
 }
 
 .movie-card:nth-child(2) {
-  background-image: url();
+  background-image: url(../../../../src/assets/info.jpg);
 }
 
 .movie-card:nth-child(3) {
-  background-image: url();
+  background-image: url(../../../../src/assets/manto.jpg);
 }
 
 .movie-card:nth-child(4) {
-  background-image: url();
+  background-image: url(../../../../src/assets/diseño.png);
 }
 
 .movie-card:nth-child(5) {
-  background-image: url();
+  background-image: url(../../../../src/assets/emca.jpg);
 }
 
 .movie-card:nth-child(6) {
-  background-image: url();
+  background-image: url(../../../../src/assets/salud.jpg);
 }
 
 .movie-card:nth-child(7) {
-  background-image: url();
-}
-
-.movie-card:nth-child(8) {
-  background-image: url();
-}
-
-.movie-card:nth-child(9) {
-  background-image: url();
-}
-
-.movie-card:nth-child(10) {
-  background-image: url();
+  background-image: url(../../../../src/assets/general.jpg);
 }
 
 .color-overlay {
