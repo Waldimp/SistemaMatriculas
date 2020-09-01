@@ -19,6 +19,7 @@ import { ThirdYearComponent } from './bach/third-year/third-year.component';
 import { SecondYearComponent } from './bach/second-year/second-year.component';
 import { ListGradosAdminComponent } from './components/admin/list-grados-admin/list-grados-admin.component';
 import { DashboardAdminComponent } from './components/admin/dashboard-admin/dashboard-admin.component';
+import { ValidarnpeComponent } from './components/validarnpe/validarnpe.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,9 @@ const routes: Routes = [
   },
   {
     path: 'users/login', component: LoginComponent
+  },
+  {
+    path: 'users/validarnpe', component: ValidarnpeComponent          
   },
   {
     path: 'users/register', component: RegisterComponent
