@@ -6,6 +6,10 @@ import { NgForm } from '@angular/forms';
 
 import {ActivatedRoute, Params} from '@angular/router';
 
+import {AuthService} from '../../../services/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserInterface } from '../../../models/user';
+
 
 @Component({
   selector: 'app-list-students',
@@ -14,16 +18,33 @@ import {ActivatedRoute, Params} from '@angular/router';
 })
 export class ListStudentsComponent implements OnInit {
 
-  constructor(private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute) { 
+  constructor(private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute, private authService: AuthService) { 
     _CargaScripts.Carga(["tablas"]);
   }
 
   public Workers = [];
   public Worker = ''; 
 
+  public isAdmin: any = null;
+
+  public userUid: string = null;
+
   ngOnInit() {
     this.getListWorkers();
+    this.getCurrentUser();
   }
+
+  getCurrentUser(){
+    this.authService.isAuth().subscribe(auth => {
+      if(auth){
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
+        })
+      }
+    })
+  }
+
 
   getListWorkers(){
 

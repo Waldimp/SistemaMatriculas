@@ -11,15 +11,12 @@ export class ProfileComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
-  user: UserInterface = {
-    name: '',
-    email: '',
-  }
+  user: UserInterface;
 
   ngOnInit() {
     this.authService.isAuth().subscribe(user =>{
       if(user){
-        this.user =user;
+        //this.user =user;
         console.log('USER ', user);
       }
     })

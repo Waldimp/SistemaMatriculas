@@ -12,6 +12,7 @@
       <h2 class="heading">Informacion conforme partida de nacimiento</h2>
 
       <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+      <input type="hidden" name="userUid" [value]="userUid">
       
       <div class="controls">
         <input type="text" id="apellido" class="floatLabel" name="apellido" [(ngModel)]="this.dataApi.selectedWorker.apellido">

@@ -69,4 +69,6 @@ export interface WorkersInterface{
     encargadoteltrabajo?: string;
 
     id?: string;
+
+    userUid?: string;
 }
