@@ -11,6 +11,12 @@
     <div class="form-group">
       <h2 class="heading">Informacion conforme partida de nacimiento</h2>
 
+      <div class="controls">
+        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+      </div>
+      <input #imageUser type="text" name="imagen" [value]="urlImage | async" [(ngModel)]="this.dataApi.selectedWorker.imagen">
+
+
       <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
       <input type="hidden" name="userUid" [value]="userUid">
       

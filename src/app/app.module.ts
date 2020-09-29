@@ -40,7 +40,8 @@ import { EditarEstudianteComponent } from './components/admin/editar-estudiante/
 import { ListGradosAdminComponent } from './components/admin/list-grados-admin/list-grados-admin.component';
 import { DashboardAdminComponent } from './components/admin/dashboard-admin/dashboard-admin.component';
 import { ValidarnpeComponent } from './components/validarnpe/validarnpe.component';
-
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { ValidarnpeComponent } from './components/validarnpe/validarnpe.componen
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [AngularFireAuth, AngularFirestore, CargarScriptsService],
   bootstrap: [AppComponent]

@@ -11,6 +11,10 @@ import {AuthService} from '../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UserInterface } from '../models/user';
 
+import { AngularFireStorage } from '@angular/fire/storage';
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable'; 
+
 
 @Component({
   selector: 'app-formulario',
@@ -19,10 +23,13 @@ import { UserInterface } from '../models/user';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor(  private router:Router,private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute, private authService: AuthService) {
+  constructor(  private router:Router,private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute, private authService: AuthService, private storage: AngularFireStorage) {
     _CargaScripts.Carga(["script"]);
     _CargaScripts.Carga(["jquery.min"]);
    }
+
+   uploadPercent: Observable<number>;
+   urlImage: Observable<string>;
 
    public userUid: string = null;
 
@@ -34,6 +41,18 @@ export class FormularioComponent implements OnInit {
     var seccionSelec = idGradoS.split('-')[1];
 
     this.getCurrentUser();
+
+  }
+
+  onUpload(e) {
+    console.log('subir', e.target.files[0]); 
+    const id = Math.random().toString(36).substring(2);
+    const file = e.target.files[0];
+    const filePath = `upload/profile_${id}`;
+    const ref = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, file);
+    this.uploadPercent = task.percentageChanges();
+    task.snapshotChanges().pipe( finalize(() => this.urlImage = ref.getDownloadURL())).subscribe();
 
   }
 

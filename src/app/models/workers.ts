@@ -1,4 +1,5 @@
 export interface WorkersInterface{
+    imagen?: string;
     apellido?: string;
     nombre?: string;
     grado?: string;
