@@ -58,7 +58,7 @@ export class ListGradosAdminComponent implements OnInit {
 
     const confirmacion = confirm('Estas seguro de eliminar?');
     if (confirmacion){
-      this.dataApi.deleteWorker(idWorker);
+      //this.dataApi.deleteWorker(idWorker);
     }
     
   }

@@ -1,5 +1,11 @@
 export interface WorkersInterface{
     imagen?: string;
+
+    file?: string;
+
+    confirmPago?: string;
+    confirmDatos?: string;
+    
     apellido?: string;
     nombre?: string;
     grado?: string;

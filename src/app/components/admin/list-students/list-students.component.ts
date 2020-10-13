@@ -22,12 +22,16 @@ export class ListStudentsComponent implements OnInit {
     _CargaScripts.Carga(["tablas"]);
   }
 
+  sourceNames = {0: 'Por revisar', 1: 'Confirmado', '': 'Pendiente' };
+
   public Workers = [];
   public Worker = ''; 
 
   public isAdmin: any = null;
 
   public userUid: string = null;
+
+  public guardar;
 
   ngOnInit() {
     this.getListWorkers();
@@ -52,19 +56,26 @@ export class ListStudentsComponent implements OnInit {
 
     idGrado = this.capitalize(idGrado);
 
-    var guardar = "Estudiantes/" + idGrado.split('S')[0] + "/Seccion" + idGrado.split('n')[1] ;
+    this.guardar = "Estudiantes/" + idGrado.split('S')[0] + "/Seccion" + idGrado.split('n')[1] ;
 
-
-    this.dataApi.getAllWorkers(guardar).subscribe( Workers => {
+    this.dataApi.getAllWorkers(this.guardar).subscribe( Workers => {
       this.Workers = Workers;
     });
+
+  }
+
+  prueba(worker: WorkersInterface){
+    console.log(worker);
   }
 
   onDeleteWorker(idWorker: string){
 
-    const confirmacion = confirm('Estas seguro de eliminar?');
+    var guardId = this.guardar + "/" + idWorker;
+
+    const confirmacion = confirm('Estas seguro de eliminar?' );
+
     if (confirmacion){
-      this.dataApi.deleteWorker(idWorker);
+      this.dataApi.deleteWorker(idWorker, guardId);
     }
     
   }

@@ -68,8 +68,14 @@ export class DataApiService {
     this.workerDoc.update(Worker);
   }
 
-  deleteWorker(idWorker: string):void {
-    this.workerDoc = this.afs.doc<WorkersInterface>(`Estudiantes/${idWorker}`);
+  updateWorkerxd(Worker: WorkersInterface, coleccionGuardar: string):void {
+    let idWorker = Worker.id;
+    this.workerDoc = this.afs.doc<WorkersInterface>(coleccionGuardar);
+    this.workerDoc.update(Worker);
+  }
+
+  deleteWorker(idWorker: string, coleccionGuardar: string):void {
+    this.workerDoc = this.afs.doc<WorkersInterface>(coleccionGuardar);
     this.workerDoc.delete();
   }
 

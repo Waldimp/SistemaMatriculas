@@ -20,15 +20,32 @@ export class DetailsStudentComponent implements OnInit {
 
   public Student: WorkersInterface = {};
 
+  public guardar;
+
+  public id;
+
+
   ngOnInit() {
 
     var idWorker = this.route.snapshot.params['id'];
 
-    var guardar = "Estudiantes/" + idWorker.split('-')[0] + "/Seccion" + idWorker.split('-')[1] ;
+    this.guardar = "Estudiantes/" + idWorker.split('-')[0] + "/Seccion" + idWorker.split('-')[1] ;
 
-    var id = idWorker.split('-')[2];
+    this.id = idWorker.split('-')[2];
 
-    this.getDetails(id, guardar);
+    this.getDetails(this.id, this.guardar);
+
+    
+    
+  }
+
+  prueba(worker: WorkersInterface){
+
+    var guardId = this.guardar + "/" + this.id;
+
+    worker.confirmDatos = "1";
+
+    this.dataApi.updateWorkerxd(worker, guardId); //editar trabajador
   }
 
   getDetails(idWorker: string, guardar: string) : void{
@@ -36,5 +53,7 @@ export class DetailsStudentComponent implements OnInit {
       this.Student = Worker;
     } );
   }
+
+
 
 }

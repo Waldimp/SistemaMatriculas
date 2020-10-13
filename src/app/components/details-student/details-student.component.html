@@ -9,9 +9,26 @@
 
     <!--General -->
     <div class="form-group">
+
+      <h2 class="heading">Revisar documentos adjuntos - <a href="{{Student.file}}" target="_blank">Click!</a></h2>
+
+      <div class="container">
+      
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button *ngIf="Student.confirmDatos == '0' " (click)="prueba(Student)" class="btn btn-success">Confirmar Archivos Ingresados</button>
+        </div>
+
+      </div>
+
+      
+
       <h2 class="heading">Informacion conforme partida de nacimiento</h2>
 
+      
+
       <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
+      <img src="{{Student.imagen}}" alt="" width="350px" >      
       
       <div class="controls">
         <input type="text" id="apellido" class="floatLabel" name="apellido" value="{{Student.apellido}}" disabled>

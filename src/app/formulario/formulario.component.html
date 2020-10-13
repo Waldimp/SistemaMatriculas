@@ -11,14 +11,32 @@
     <div class="form-group">
       <h2 class="heading">Informacion conforme partida de nacimiento</h2>
 
+
+      <h3>Ingrese la imagen del estudiante:</h3>
       <div class="controls">
         <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
       </div>
+      
       <input #imageUser type="text" name="imagen" [value]="urlImage | async" [(ngModel)]="this.dataApi.selectedWorker.imagen">
 
 
+      <h3>Ingrese archivos de matrícula (un solo PDF):</h3>
+
+      <div class="controls">
+        <input type="file" accept=".pdf" (change)="onUploadFile($event)">
+      </div>
+      
+      <input #fileUser type="text" name="file" [value]="urlFile | async" [(ngModel)]="this.dataApi.selectedWorker.file">
+
+
+
       <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedWorker.id">
+
       <input type="hidden" name="userUid" [value]="userUid">
+
+      <input type="hidden" name="confirmPago" [value]="confirmPago">
+
+      <input type="hidden" name="confirmDatos" [value]="confirmDatos">
       
       <div class="controls">
         <input type="text" id="apellido" class="floatLabel" name="apellido" [(ngModel)]="this.dataApi.selectedWorker.apellido">

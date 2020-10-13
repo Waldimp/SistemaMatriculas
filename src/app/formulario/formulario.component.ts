@@ -31,6 +31,8 @@ export class FormularioComponent implements OnInit {
    uploadPercent: Observable<number>;
    urlImage: Observable<string>;
 
+   urlFile: Observable<string>;
+
    public userUid: string = null;
 
   ngOnInit() {
@@ -56,6 +58,17 @@ export class FormularioComponent implements OnInit {
 
   }
 
+  onUploadFile(e){
+    console.log('subir', e.target.files[0]); 
+    const id = Math.random().toString(36).substring(2);
+    const file = e.target.files[0];
+    const filePath = `files/file_${id}`;
+    const ref = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, file);
+    this.uploadPercent = task.percentageChanges();
+    task.snapshotChanges().pipe( finalize(() => this.urlFile = ref.getDownloadURL())).subscribe();
+  }
+
   getCurrentUser(){
     this.authService.isAuth().subscribe(auth => {
       if(auth){
@@ -74,6 +87,9 @@ export class FormularioComponent implements OnInit {
     console.log(workerForm.value.id);
 
     workerForm.value.userUid = this.userUid;
+
+    workerForm.value.confirmPago = "0";
+    workerForm.value.confirmDatos = "0";
 
     if(workerForm.value.id == null){
       this.dataApi.addWorker(workerForm.value, guardar); //nuevo trabajador
