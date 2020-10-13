@@ -20,6 +20,7 @@ export class ListStudentsComponent implements OnInit {
 
   constructor(private _CargaScripts:CargarScriptsService, private dataApi: DataApiService, private route: ActivatedRoute, private authService: AuthService) { 
     _CargaScripts.Carga(["tablas"]);
+    _CargaScripts.Carga(["tablaExcel"]);
   }
 
   sourceNames = {0: 'Por revisar', 1: 'Confirmado', '': 'Pendiente' };
@@ -48,6 +49,8 @@ export class ListStudentsComponent implements OnInit {
       }
     })
   }
+
+  
 
 
   getListWorkers(){
