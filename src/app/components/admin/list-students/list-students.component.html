@@ -61,6 +61,8 @@
                     <td><span class="label label-success">{{sourceNames[Worker.confirmDatos]}}</span></td>
                     <td><a href="/student/{{Worker.grado}}-{{Worker.seccion}}-{{Worker.id}}" class="btn btn-sm manage">Ver</a></td>
 
+                    <td><button type="hidden" id="{{Worker.id}}" (click)="editar(Worker)" class="btn btn-sm manage">Pagar</button></td>
+
                     <td *ngIf="Worker.userUid == userUid || isAdmin == true; else noOwner"><a href="/editar/{{Worker.grado}}-{{Worker.seccion}}-{{Worker.id}}" class="btn btn-sm manage">Actualizar</a></td>
 
                     <td *ngIf="isAdmin == true; else noAdmin"><a (click)="onDeleteWorker(Worker.id)" class="btn btn-sm manage">Eliminar</a></td>
@@ -80,10 +82,23 @@
         </table>
     </div> 
 
-    <div id="navbar"><span>Leer Excel </span></div>
-    <div id="wrapper">
-        <input type="file" id="input-excel"/>
+    <div class="container">
+        
+        <div id="navbar"><span>Leer Excel </span></div>
+        <div id="wrapper">
+            <input type="file" id="input-excel"/>
+        </div>
+    
+        <input type="button" value="Confirmar tabla" id="aceptar" >
+    
+        
+        <form action="">
+            <input type="button" value="Realizar Pagos" id="ok" class="btn btn-success">
+          </form>
+
     </div>
+
+    
 
 </div>   
 </div> 

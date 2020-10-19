@@ -43,7 +43,12 @@ export class DetailsStudentComponent implements OnInit {
 
     var guardId = this.guardar + "/" + this.id;
 
-    worker.confirmDatos = "1";
+    if(worker.confirmDatos == "2"){
+      worker.confirmDatos = "3";
+    }else if(worker.confirmDatos == "0"){
+      worker.confirmDatos = "1";
+    }
+
 
     this.dataApi.updateWorkerxd(worker, guardId); //editar trabajador
   }
