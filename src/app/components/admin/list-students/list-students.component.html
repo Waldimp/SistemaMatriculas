@@ -58,7 +58,7 @@
                     <td>{{Worker.codigo}}</td>
                     <td>{{Worker.grado}}</td>
                     <td>{{Worker.especialidad}}</td>
-                    <td><span class="label label-success">Pagado</span></td>
+                    <td><span class="label label-success">{{sourceNames[Worker.confirmDatos]}}</span></td>
                     <td><a href="/student/{{Worker.grado}}-{{Worker.seccion}}-{{Worker.id}}" class="btn btn-sm manage">Ver</a></td>
 
                     <td *ngIf="Worker.userUid == userUid || isAdmin == true; else noOwner"><a href="/editar/{{Worker.grado}}-{{Worker.seccion}}-{{Worker.id}}" class="btn btn-sm manage">Actualizar</a></td>
