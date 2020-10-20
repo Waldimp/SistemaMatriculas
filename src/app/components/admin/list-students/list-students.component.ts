@@ -101,10 +101,7 @@ export class ListStudentsComponent implements OnInit {
                 prub.push(valores);
 
                 
-              }
-
-              
-             
+              }    
               cont++;
           }
       });

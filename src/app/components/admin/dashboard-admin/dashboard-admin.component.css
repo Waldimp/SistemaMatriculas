@@ -79,3 +79,44 @@ body,
       -ms-transform: rotate(-44deg);
       transform: rotate(-44deg);
     }
+  #tx{
+    font-size: 60px;
+    padding-bottom: 7%;
+    letter-spacing: 5px;
+  }
+  .display-1{
+    font-size: 85px;
+    padding: 4%;
+    color: white;
+    
+  }
+  .text-uppercase{
+    padding: 5%;
+    color: white;
+  }
+ .col-md-9{
+  margin: 25px;
+  
+  }
+  .col-md-9 .col-xl-3{
+  
+  }
+  .navbar-brand{
+    color:white;
+  }
+  .nav-item{
+    color: black;
+  }
+  
+  nav{
+    background-color: #043353;
+  }
+  .color{
+    background-color: #043353;
+  }
+  .logo{
+    width: 60vh;
+  }
+  .espacio{
+    width: 1000px;
+  }

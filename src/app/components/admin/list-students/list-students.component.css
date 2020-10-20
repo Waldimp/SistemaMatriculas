@@ -82,11 +82,7 @@ header {
   }
   
   .logo {
-    float: left;
-    font-family: 'Monda', sans-serif;
-    font-size: 1.75em;
-    margin-left: 4%;
-    font-weight: 400;
+    width: 60vh;
   }
   
   nav {

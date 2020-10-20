@@ -1,5 +1,7 @@
 <header>
-    <h1 class="logo">LOGO CDB</h1>
+    <div>
+        <img src="../../../../assets/unnamed.png" class="logo">
+    </div>
     <nav>
       <ul class="nav-bar">
         <li><a href="#">Cerrar Sesion</a></li>
@@ -61,7 +63,7 @@
                     <td><span class="label label-success">{{sourceNames[Worker.confirmDatos]}}</span></td>
                     <td><a href="/student/{{Worker.grado}}-{{Worker.seccion}}-{{Worker.id}}" class="btn btn-sm manage">Ver</a></td>
 
-                    <td><button type="hidden" id="{{Worker.id}}" (click)="editar(Worker)" class="btn btn-sm manage">Pagar</button></td>
+                    <td *ngIf="Worker.confirmDatos == '0' || Worker.confirmDatos == '1'; "><button id="{{Worker.id}}" (click)="editar(Worker)" class="btn btn-sm manage">Pago</button></td>
 
                     <td *ngIf="Worker.userUid == userUid || isAdmin == true; else noOwner"><a href="/editar/{{Worker.grado}}-{{Worker.seccion}}-{{Worker.id}}" class="btn btn-sm manage">Actualizar</a></td>
 
@@ -81,10 +83,11 @@
             </tbody>
         </table>
     </div> 
-
+<br>
+<br>
     <div class="container">
         
-        <div id="navbar"><span>Leer Excel </span></div>
+        <div id="navbar" class="lead"><span class="dislay-4">Leer Excel </span></div>
         <div id="wrapper">
             <input type="file" id="input-excel"/>
         </div>
